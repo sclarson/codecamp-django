@@ -127,10 +127,16 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'django.contrib.staticfiles',
     'codecamp',
+    'sitetree',
 )
 
 # Set in local_settings
 #TEMPLATE_DIRS = ('',)
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.core.context_processors.request',
+    'django.contrib.auth.context_processors.auth',
+    )
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
