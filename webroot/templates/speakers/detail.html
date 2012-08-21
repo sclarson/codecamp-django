@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Speaker Profile - {{ speaker }}{% endblock %}
+{% block body %}
+<ul>
+    <li>{{speaker}}</li>
+    <li>{{speaker.first_name}}</li>
+    <li>{{speaker.last_name}}</li>
+    <li>{{speaker.company}}</li>
+    <li>{{speaker.twitter}}</li>
+    <li>{{speaker.email}}</li>
+    <li>{{speaker.website}}</li>
+    <li>{{speaker.company_website}}</li>
+</ul>
+{% endblock %}
