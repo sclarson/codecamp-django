@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}South Dakota Code Camp - {{ session.title }}{% endblock %}
+{% block body %}
+<ul>
+    <li><a href="{% url session_detail session.slug session.id %}">{{session.title}}</a></li>
+    <li>Speaker
+    <ul>
+        {% for speaker in session.speakers.all %}
+        <li>{{speaker}}</li>
+        {% endfor %}
+    </ul>
+    </li>
+    <li>{{session.abstract}}</li>
+    <li>{{session.year}}</li>
+</ul>
+{% endblock %}

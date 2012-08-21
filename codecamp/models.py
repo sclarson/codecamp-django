@@ -22,6 +22,7 @@ class Session(models.Model):
     title = models.CharField(max_length=60)
     abstract = models.TextField()
     year = models.IntegerField(choices=YEARS, default=date.today().year)
+    slug = models.SlugField()
 
     def __unicode__(self):
         return self.title
