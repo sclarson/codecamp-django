@@ -9,35 +9,29 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
 	<meta charset="utf-8" />
-
 	<!-- Set the viewport width to device width for mobile -->
 	<meta name="viewport" content="width=device-width" />
-
-	<title>Welcome to Foundation</title>
-
+	<title>{% block title %}South Dakota Code Camp{% endblock %}</title>
 	<!-- Included CSS Files -->
 	<link rel="stylesheet" href="{% static 'stylesheets/app.css' %}">
-
 	<script src="{% static 'javascripts/foundation/modernizr.foundation.js' %}"></script>
-
 	<!-- IE Fix for HTML5 Tags -->
 	<!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-
 </head>
 <body>
-
 	<div class="row">
 		<div class="twelve columns">
 			<h2>Welcome to Foundation</h2>
 			<p>This is version 3.0.9.</p>
 			<hr />
-			{% sitetree_menu from "cc" include "trunk" %}
+			{% sitetree_menu from "cc" include "trunk" template 'sitetree/menu_foundation.html' %}
 		</div>
 	</div>
-
 	<div class="row">
+		<div class="twelve columns">
+		{% block body %}
 		<div class="eight columns">
 			<h3>The Grid</h3>
 
@@ -120,6 +114,8 @@
 				<li><a href="http://twitter.com/foundationzurb">@foundationzurb</a><br />Ping us on Twitter if you have questions. If you build something with this we'd love to see it (and send you a totally boss sticker).</li>
 			</ul>
 		</div>
+		{% endblock %}
+		</div>
 	</div>
 	
 	<!-- Included JS Files (Uncompressed) -->
@@ -146,8 +142,6 @@
 	<script src="{% static 'javascripts/foundation/jquery.foundation.tooltips.js' %}"></script>
 	
 	<script src="{% static 'javascripts/foundation/jquery.placeholder.js' %}"></script>
-	
-	
   <!-- Application Javascript, safe to override -->
   <script src="{% static 'javascripts/foundation/app.js' %}"></script>
 </body>
