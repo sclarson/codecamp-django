@@ -30,6 +30,7 @@
 		</div>
 	</div>
 	<div class="row">
+		<div class="twelve columns">
 		{% block body %}
 		<div class="eight columns">
 			<h3>The Grid</h3>
@@ -114,6 +115,7 @@
 			</ul>
 		</div>
 		{% endblock %}
+		</div>
 	</div>
 	
 	<!-- Included JS Files (Uncompressed) -->
@@ -140,8 +142,6 @@
 	<script src="{% static 'javascripts/foundation/jquery.foundation.tooltips.js' %}"></script>
 	
 	<script src="{% static 'javascripts/foundation/jquery.placeholder.js' %}"></script>
-	
-	
   <!-- Application Javascript, safe to override -->
   <script src="{% static 'javascripts/foundation/app.js' %}"></script>
 </body>
