@@ -19,7 +19,7 @@ class Speaker(models.Model):
         return self.first_name + " " + self.last_name
 
     def get_absolute_url(self):
-        return "/speakers/" % self.slug
+        return "/speakers/" % self.slug % ',' % self.id
 
 
 class Session(models.Model):
@@ -37,4 +37,4 @@ class Session(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return "/sessions/" % self.slug
+        return "/sessions/" % self.slug % ',' % self.id
