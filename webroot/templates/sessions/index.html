@@ -4,11 +4,11 @@
 {% block body %}
 <ul>
 {% for session in session_list %}
-    <li> <div><a href="{% url session_detail session.slug session.id %}">{{session.title}}</a></div>
+    <li> <div><a href="{{ session.get_absolute_url }}">{{session.title}}</a></div>
         <div>Speaker
         <ul>
             {% for speaker in session.speakers.all %}
-            <li>{{speaker}}</li>
+            <li><a href="{{ speaker.get_absolute_url }}">{{speaker}}</a></li>
             {% endfor %}
         </ul>
         </div>

@@ -5,7 +5,7 @@
 <ul>
 {% for speaker in speaker_list %}
     <li>
-        <div><a href="{% url speaker_detail speaker.slug speaker.id %}">{{speaker}}</a></div>
+        <div><a href="{{ speaker.get_absolute_url }}">{{speaker}}</a></div>
         <div>{{speaker.first_name}}</div>
         <div>{{speaker.last_name}}</div>
         <div>{{speaker.company}}</div>

@@ -1,4 +1,4 @@
-from django.shortcuts import render_to_response
+from django.shortcuts import get_object_or_404, render_to_response
 from models import Speaker, Session
 
 
@@ -8,8 +8,9 @@ def speakers_index(request):
                               'speaker_list': speaker_list,
                               'request': request})
 
-def speaker_detail(request, slug, id):
-    speaker = Speaker.objects.get(pk=id)
+
+def speaker_detail(request, slug):
+    speaker = get_object_or_404(Speaker, slug=slug)
     return render_to_response('speakers/detail.html', {
                               'speaker': speaker,
                               'request': request
@@ -22,8 +23,9 @@ def sessions_index(request):
                               'session_list': session_list,
                               'request': request})
 
-def session_detail(request, slug, id):
-    session = Session.objects.get(pk=id)
+
+def session_detail(request, slug):
+    session = get_object_or_404(Session, slug=slug)
     return render_to_response('sessions/detail.html', {
                               'session': session,
                               'request': request})

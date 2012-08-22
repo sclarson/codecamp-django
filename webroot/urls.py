@@ -18,12 +18,16 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
-    (r'^speakers$', redirect_to, {'url': '/speakers/'}),
-    url(r'^speakers/$', 'codecamp.views.speakers_index', name='speaker_index'),
-    url(r'^speakers/(?P<slug>[-\w\d]+),(?P<id>\d+)/$','codecamp.views.speaker_detail', name='speaker_detail'),
-    (r'^sessions$', redirect_to, {'url': '/sessions/'}),
-    url(r'^sessions/$', 'codecamp.views.sessions_index', name='session_index'),
-    url(r'^sessions/(?P<slug>[-\w\d]+),(?P<id>\d+)/$','codecamp.views.session_detail', name='session_detail'),
+    # Sessions
+    url(r'^sessions/$', 'codecamp.views.sessions_index'),
+    # Speakers
+    url(r'^speakers/$', 'codecamp.views.speakers_index'),
+    #(r'^speakers$', redirect_to, {'url': '/speakers/'}),
+    #url(r'^speakers/$', 'codecamp.views.speakers_index', name='speaker_index'),
+    #url(r'^speakers/(?P<slug>[-\w\d]+),(?P<id>\d+)/$','codecamp.views.speaker_detail', name='speaker_detail'),
+    #(r'^sessions$', redirect_to, {'url': '/sessions/'}),
+    #url(r'^sessions/$', 'codecamp.views.sessions_index', name='session_index'),
+    #url(r'^sessions/(?P<slug>[-\w\d]+),(?P<id>\d+)/$','codecamp.views.session_detail', name='session_detail'),
     (r'', include('django.contrib.flatpages.urls')),
-    
+
 )
