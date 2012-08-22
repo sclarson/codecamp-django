@@ -167,4 +167,4 @@ LOGGING = {
     }
 }
 
-from webroot.local_settings import *
+#from webroot.local_settings import *
