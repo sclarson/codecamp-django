@@ -1,0 +1,21 @@
+{% load sitetree %}
+<!--[if lt IE 7]>
+    <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+<![endif]-->
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <div id="arrow_down_yellow"></div><div id="arrow_down_white"></div>
+            <a class="brand" href="/"><span class=logo></span><span class=vm>SD</span>Code Camp<span class=vm>12</span></a>
+            <div class="nav-collapse">
+{% sitetree_menu from "cc" include "trunk" template 'sitetree/menu_bootstrap.html' %}
+            </div><!--/.nav-collapse -->
+        </div>
+    </div>
+</div>
