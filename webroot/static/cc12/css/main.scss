@@ -154,6 +154,13 @@ h6 {
 /** MAIN **/
 #MainContainer {
 	margin-top: 90px;
+	#SpeakerIndex {
+		.row {
+			p {
+				margin-bottom: 0;
+			}
+		}
+	}
 }
 
 /** FOOTER **/

@@ -132,6 +132,8 @@ h6 {
 /** MAIN **/
 #MainContainer {
   margin-top: 90px; }
+  #MainContainer #SpeakerIndex .row p {
+    margin-bottom: 0; }
 
 /** FOOTER **/
 #MainFooter {

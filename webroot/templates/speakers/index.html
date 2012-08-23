@@ -2,18 +2,21 @@
 
 {% block title %}South Dakota Code Camp Speakers{% endblock %}
 {% block body %}
-<ul>
-{% for speaker in speaker_list %}
-    <li>
-        <div><a href="{{ speaker.get_absolute_url }}">{{speaker}}</a></div>
-        <div>{{speaker.first_name}}</div>
-        <div>{{speaker.last_name}}</div>
-        <div>{{speaker.company}}</div>
-        <div>{{speaker.twitter}}</div>
-        <div>{{speaker.email}}</div>
-        <div>{{speaker.website}}</div>
-        <div>{{speaker.company_website}}</div>
-    </li>
-{% endfor %}
-</ul>
+<div id="SpeakerIndex">
+<div class="row">
+    {% for speaker in speaker_list %}
+    <div class="span3">
+        <h4><a href="{{ speaker.get_absolute_url }}">{{speaker}}</a></h4>
+        {% if speaker.company %}<p>{{speaker.company}}{% endif %}
+        {% if speaker.twitter %}<p><a href="http://twitter.com/{{speaker.twitter}}" alt="twitter handle {{speaker.twitter}}">{{speaker.twitter}}</a>{% endif %}
+        {% if speaker.email %}<p>{{speaker.email}}{% endif %}
+        {% if speaker.website %}<p><a href="{{speaker.website}}" alt="website">Website</a>{% endif %}
+        {% if speaker.company_website %}<p><a href="{{speaker.company_website}}" alt="company website">Company Website</a>{% endif %}
+    </div>
+    <div class="span3">
+        <p><img src="{{speaker.photo}}" alt="{{speaker}}" />
+    </div>
+    {% endfor %}
+</div>
+</div>
 {% endblock %}
