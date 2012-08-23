@@ -41,7 +41,7 @@
 
         <div id="MainContainer" class="container">
             <!-- Main hero unit for a primary marketing message or call to action -->
-            {% block body %}
+            
             <div class="hero-unit">
                 <h1>Hello, world!</h1>
                 <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
@@ -50,11 +50,11 @@
 
             <div class="row">
                 <div class="span12 center">
-                    <h2>Heading</h2>
+                    <h2>{% block title %}South Dakota Code Camp{% endblock %}</h2>
                     <h3>It's like fat camp, without the diet</h3>
                 </div>
             </div>
-
+        {% block body %}
             <!-- Example row of columns -->
             <div class="row">
                 <div class="span4">
