@@ -1,0 +1,237 @@
+@import "mixins.scss";
+@import "fonts.css";
+@import "bootstrap.css";
+@import "bootstrap-responsive.css";
+
+$yellow: #f1c400;
+$white: #FFF;
+$blue: #198DAD;
+$red: #EB4008;
+$dk_gray:#484848;
+
+$hover: $blue;
+
+/** GENERAL **/
+p { 
+	color: $dk_gray; 
+}
+h1 {
+	font-family: BebasRegular, Helvetica, Arial, sans-serif;
+}
+h2 {
+	color: $dk_gray;
+	font: 48px BebasRegular, Helvetica, Arial, sans-serif;
+	letter-spacing: 1px;
+	border-top: 1px solid lightgray;
+	border-bottom: 1px solid lightgray;
+	margin-bottom: 14px;
+	padding: 10px 0 12px;
+}
+h3 {
+	color: $red;
+	font: italic 23px Georgia, "Times New Roman", serif;
+}
+h4 {
+	color: $blue;
+	font: italic 14px Georgia,"Times New Roman", serif;
+	margin-bottom: 3px;
+}
+h5 {
+	color: $dk_gray;
+	font: italic 14px Georgia,"Times New Roman", serif;
+}
+h6 {
+	color: $dk_gray;
+	font: 12px BebasRegular, Helvetica, Arial, sans-serif;
+	letter-spacing: 1px;
+}
+.logo {
+	background-image: url('../img/cc_logo.png');
+	width: 70px;
+	height: 50px;
+	display: inline-block;
+}
+// vertical-middle logo
+.vm {
+	font-size: 16px;
+	margin: 0 5px;
+	vertical-align: middle;
+}
+#arrow_down_yellow {
+	width: 0; 
+	height: 0; 
+	border-left: 35px solid transparent;
+	border-right: 35px solid transparent;
+	border-top: 16px solid $yellow;
+	position:absolute;
+	top:60px;
+	left:12px;
+	z-index: 1000;
+}
+#arrow_down_white {
+	width: 0; 
+	height: 0; 
+	border-left: 40px solid transparent;
+	border-right: 40px solid transparent;
+	border-top: 20px solid $white;
+	position:absolute;
+	top:70px;
+	left:7px;
+}
+.btn-cc12 {
+	background:$yellow;
+	border:none;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	color: $white;
+	font:100 13px Helvetica, Arial, sans-serif;
+	text-shadow: 0 0 0;
+	text-transform: uppercase;
+}
+.center {
+	text-align: center;
+}
+
+/** HEADER **/
+.navbar-fixed-top .navbar-inner, .navbar-static-top .navbar-inner {
+	-webkit-box-shadow: inset 0 0 0;
+	-moz-box-shadow: inset 0 0 0;
+	box-shadow: inset 0 0 0;
+}
+.navbar {
+	border-bottom: 11px solid $white;
+	color:$white;
+	font-family: BebasRegular, Helvetica, Arial, sans-serif;
+	.brand {
+		color:$white;
+		font-size: 30px;
+		margin-left: 73px;
+		padding: 14px 20px 15px;
+		position: relative;
+		text-transform:uppercase;
+		.logo {
+			position: absolute;
+			top:10px;
+			left:-60px;
+		}
+	}
+	.nav {
+		font-size: 16px;
+		margin: 7px 10px 0 0;
+	}
+	.nav > .active > a, .nav > .active > a:hover, .nav > .active > a:focus {
+		-webkit-box-shadow: inset 0 0 0;
+		-moz-box-shadow: inset 0 0 0;
+		box-shadow: inset 0 0 0;
+		background: $yellow;
+		color: $blue;
+	}
+	.nav > li > a {
+		color: $white;
+		text-shadow: 0 0 0;
+		&:focus,&:hover {
+			color: $blue
+		}
+	}
+}
+.navbar-inner {
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	background: $yellow;
+	height: 60px;
+	.container {
+		position: relative;
+		.nav-collapse {
+			.nav {
+				float: right;
+			}
+		}
+	}
+}
+
+/** MAIN **/
+#MainContainer {
+	margin-top: 90px;
+}
+
+/** FOOTER **/
+#MainFooter {
+	background: $yellow;
+	&.navbar-fixed-bottom {
+		position: relative;
+	}
+	.foot-container {
+		margin-top:30px;
+		#FooterLogo {
+			margin-bottom: 60px;
+			position:relative;
+			.brand{
+				color:$white;
+				font-family: BebasRegular, Helvetica, Arial, sans-serif;
+				font-size: 18px;
+				line-height: 38px;
+				margin-left:47px;
+				text-transform:uppercase;
+				&:hover { 
+					text-decoration: none;
+				}
+				.logo {
+					background-size: 45px 32px;
+					height: 32px;
+					left:0;
+					position: absolute;
+					top: 5px;
+					width: 45px;
+				}
+				.vm {
+					font-size:12px;
+				}
+			}
+		}
+		#FollowBox {
+			float: right;
+			p {
+				color: $white;
+				display: inline-block;
+			}
+			.share {
+				display: inline-block;
+				height:31px;
+				margin-left: 5px;
+				width:31px;
+
+				&.fb {
+					background:url(../img/share_sprite.png) 0 0;
+					&:hover {
+						background:url(../img/share_sprite.png) 0 31px;
+					}
+				}
+				&.tw {
+					background:url(../img/share_sprite.png) 31px 0;
+					&:hover {
+						background:url(../img/share_sprite.png) 31px 31px;
+					}
+				}
+			}
+		}
+		#SponsoredBy {
+			font-size: 12px;
+			margin-bottom: 60px;
+			p {
+				margin: 0;
+				a {
+					color: $dk_gray;
+					&:hover,&:active {
+						color: $hover;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+@import "ie.css";
