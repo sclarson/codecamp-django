@@ -1,20 +1,21 @@
 {% extends "base.html" %}
 
-{% block title %}South Dakota Code Camp - {{ session.title }}{% endblock %}
+{% block title %}South Dakota Code Camp Sessions{% endblock %}
 {% block body %}
-<ul>
-{% for session in session_list %}
-    <li> <div><a href="{{ session.get_absolute_url }}">{{session.title}}</a></div>
-        <div>Speaker
+<div id="SessionIndex">
+<div class="row">
+    {% for session in session_list %}
+    <div class="span3">
+        <h4><a href="{{ session.get_absolute_url }}">{{session}}</a></h4>
+        <p>{{session.year}}</p>
         <ul>
             {% for speaker in session.speakers.all %}
             <li><a href="{{ speaker.get_absolute_url }}">{{speaker}}</a></li>
             {% endfor %}
         </ul>
-        </div>
-        <div>{{session.abstract}}</div>
-        <div>{{session.year}}</div>
-    </li>
-{% endfor %}
-</ul>
+        <p>{{session.abstract}}
+    </div>
+    {% endfor %}
+</div>
+</div>
 {% endblock %}
