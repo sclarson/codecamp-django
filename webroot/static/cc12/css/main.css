@@ -144,6 +144,7 @@ h6 {
     margin-top: 30px; }
     #MainFooter .foot-container #FooterLogo {
       margin-bottom: 60px;
+      overflow: hidden;
       position: relative; }
       #MainFooter .foot-container #FooterLogo .brand {
         color: white;
@@ -164,12 +165,16 @@ h6 {
         #MainFooter .foot-container #FooterLogo .brand .vm {
           font-size: 12px; }
     #MainFooter .foot-container #FollowBox {
-      float: right; }
+      float: right;
+      min-width: 125px; }
       #MainFooter .foot-container #FollowBox p {
         color: white;
-        display: inline-block; }
-      #MainFooter .foot-container #FollowBox .share {
         display: inline-block;
+        float: left;
+        line-height: 31px; }
+      #MainFooter .foot-container #FollowBox .share {
+        display: block;
+        float: left;
         height: 31px;
         margin-left: 5px;
         width: 31px; }

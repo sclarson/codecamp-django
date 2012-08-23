@@ -41,12 +41,13 @@
 
         <div id="MainContainer" class="container">
             <!-- Main hero unit for a primary marketing message or call to action -->
-            
+            {% block hero-unit %}
             <div class="hero-unit">
                 <h1>Hello, world!</h1>
                 <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
                 <p><a class="btn btn-cc12 btn-large">Learn more</a></p>
             </div>
+            {% endblock %}
 
             <div class="row">
                 <div class="span12 center">
@@ -77,7 +78,7 @@
             <div class="container">
                 <div class="foot-container">
                     <div id="FollowBox">
-                        <p>follow</p><span class="share fb"></span><span class="share tw"></span>
+                        <p>follow</p><a href="#" class="share fb"></a><a href="#" class="share tw"></a>
                     </div>
                     <div id="FooterLogo">
                         <a class="brand" href="/">

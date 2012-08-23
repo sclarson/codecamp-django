@@ -173,6 +173,7 @@ h6 {
 		margin-top:30px;
 		#FooterLogo {
 			margin-bottom: 60px;
+			overflow:hidden;
 			position:relative;
 			.brand{
 				color:$white;
@@ -199,12 +200,16 @@ h6 {
 		}
 		#FollowBox {
 			float: right;
+			min-width: 125px;
 			p {
 				color: $white;
 				display: inline-block;
+				float: left;
+				line-height: 31px;
 			}
 			.share {
-				display: inline-block;
+				display: block;
+				float: left;
 				height:31px;
 				margin-left: 5px;
 				width:31px;
