@@ -11,6 +11,7 @@ class Speaker(models.Model):
     website = models.URLField(blank=True)
     company_website = models.URLField(blank=True)
     slug = models.SlugField(unique=True)
+    photo = models.ImageField(upload_to='webroot/static/images')
 
     class Meta:
         ordering = ['-last_name']
@@ -19,7 +20,7 @@ class Speaker(models.Model):
         return self.first_name + " " + self.last_name
 
     def get_absolute_url(self):
-        return "/speakers/" % self.slug % ',' % self.id
+        return "/speakers/%s,%i/" % self.slug % self.id
 
 
 class Session(models.Model):
@@ -37,4 +38,4 @@ class Session(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return "/sessions/" % self.slug % ',' % self.id
+        return "/sessions/%s,%i/" % self.slug % self.id
