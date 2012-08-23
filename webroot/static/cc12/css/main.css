@@ -1,0 +1,190 @@
+@import url(fonts.css);
+@import url(bootstrap.css);
+@import url(bootstrap-responsive.css);
+@import url(ie.css);
+/** GENERAL **/
+p {
+  color: #484848; }
+
+h1 {
+  font-family: BebasRegular, Helvetica, Arial, sans-serif; }
+
+h2 {
+  color: #484848;
+  font: 48px BebasRegular, Helvetica, Arial, sans-serif;
+  letter-spacing: 1px;
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 14px;
+  padding: 10px 0 12px; }
+
+h3 {
+  color: #eb4008;
+  font: italic 23px Georgia, "Times New Roman", serif; }
+
+h4 {
+  color: #198dad;
+  font: italic 14px Georgia,"Times New Roman", serif;
+  margin-bottom: 3px; }
+
+h5 {
+  color: #484848;
+  font: italic 14px Georgia,"Times New Roman", serif; }
+
+h6 {
+  color: #484848;
+  font: 12px BebasRegular, Helvetica, Arial, sans-serif;
+  letter-spacing: 1px; }
+
+.logo {
+  background-image: url("../img/cc_logo.png");
+  width: 70px;
+  height: 50px;
+  display: inline-block; }
+
+.vm {
+  font-size: 16px;
+  margin: 0 5px;
+  vertical-align: middle; }
+
+#arrow_down_yellow {
+  width: 0;
+  height: 0;
+  border-left: 35px solid transparent;
+  border-right: 35px solid transparent;
+  border-top: 16px solid #f1c400;
+  position: absolute;
+  top: 60px;
+  left: 12px;
+  z-index: 1000; }
+
+#arrow_down_white {
+  width: 0;
+  height: 0;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  border-top: 20px solid white;
+  position: absolute;
+  top: 70px;
+  left: 7px; }
+
+.btn-cc12 {
+  background: #f1c400;
+  border: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  color: white;
+  font: 100 13px Helvetica, Arial, sans-serif;
+  text-shadow: 0 0 0;
+  text-transform: uppercase; }
+
+.center {
+  text-align: center; }
+
+/** HEADER **/
+.navbar-fixed-top .navbar-inner, .navbar-static-top .navbar-inner {
+  -webkit-box-shadow: inset 0 0 0;
+  -moz-box-shadow: inset 0 0 0;
+  box-shadow: inset 0 0 0; }
+
+.navbar {
+  border-bottom: 11px solid white;
+  color: white;
+  font-family: BebasRegular, Helvetica, Arial, sans-serif; }
+  .navbar .brand {
+    color: white;
+    font-size: 30px;
+    margin-left: 73px;
+    padding: 14px 20px 15px;
+    position: relative;
+    text-transform: uppercase; }
+    .navbar .brand .logo {
+      position: absolute;
+      top: 10px;
+      left: -60px; }
+  .navbar .nav {
+    font-size: 16px;
+    margin: 7px 10px 0 0; }
+  .navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus {
+    -webkit-box-shadow: inset 0 0 0;
+    -moz-box-shadow: inset 0 0 0;
+    box-shadow: inset 0 0 0;
+    background: #f1c400;
+    color: #198dad; }
+  .navbar .nav > li > a {
+    color: white;
+    text-shadow: 0 0 0; }
+    .navbar .nav > li > a:focus, .navbar .nav > li > a:hover {
+      color: #198dad; }
+
+.navbar-inner {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  background: #f1c400;
+  height: 60px; }
+  .navbar-inner .container {
+    position: relative; }
+    .navbar-inner .container .nav-collapse .nav {
+      float: right; }
+
+/** MAIN **/
+#MainContainer {
+  margin-top: 90px; }
+
+/** FOOTER **/
+#MainFooter {
+  background: #f1c400; }
+  #MainFooter.navbar-fixed-bottom {
+    position: relative; }
+  #MainFooter .foot-container {
+    margin-top: 30px; }
+    #MainFooter .foot-container #FooterLogo {
+      margin-bottom: 60px;
+      position: relative; }
+      #MainFooter .foot-container #FooterLogo .brand {
+        color: white;
+        font-family: BebasRegular, Helvetica, Arial, sans-serif;
+        font-size: 18px;
+        line-height: 38px;
+        margin-left: 47px;
+        text-transform: uppercase; }
+        #MainFooter .foot-container #FooterLogo .brand:hover {
+          text-decoration: none; }
+        #MainFooter .foot-container #FooterLogo .brand .logo {
+          background-size: 45px 32px;
+          height: 32px;
+          left: 0;
+          position: absolute;
+          top: 5px;
+          width: 45px; }
+        #MainFooter .foot-container #FooterLogo .brand .vm {
+          font-size: 12px; }
+    #MainFooter .foot-container #FollowBox {
+      float: right; }
+      #MainFooter .foot-container #FollowBox p {
+        color: white;
+        display: inline-block; }
+      #MainFooter .foot-container #FollowBox .share {
+        display: inline-block;
+        height: 31px;
+        margin-left: 5px;
+        width: 31px; }
+        #MainFooter .foot-container #FollowBox .share.fb {
+          background: url(../img/share_sprite.png) 0 0; }
+          #MainFooter .foot-container #FollowBox .share.fb:hover {
+            background: url(../img/share_sprite.png) 0 31px; }
+        #MainFooter .foot-container #FollowBox .share.tw {
+          background: url(../img/share_sprite.png) 31px 0; }
+          #MainFooter .foot-container #FollowBox .share.tw:hover {
+            background: url(../img/share_sprite.png) 31px 31px; }
+    #MainFooter .foot-container #SponsoredBy {
+      font-size: 12px;
+      margin-bottom: 60px; }
+      #MainFooter .foot-container #SponsoredBy p {
+        margin: 0; }
+        #MainFooter .foot-container #SponsoredBy p a {
+          color: #484848; }
+          #MainFooter .foot-container #SponsoredBy p a:hover, #MainFooter .foot-container #SponsoredBy p a:active {
+            color: #198dad; }

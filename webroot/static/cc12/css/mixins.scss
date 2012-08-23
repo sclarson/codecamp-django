@@ -1,0 +1,23 @@
+@mixin vertical-gradient($startcolor, $stopcolor)
+{
+    background:-webkit-gradient(linear, left top, left bottom, from($startcolor), to($stopcolor));
+    background:-webkit-linear-gradient(top, $startcolor, $stopcolor);
+    background:-moz-linear-gradient(top,  $startcolor,  $stopcolor);
+    background:-o-linear-gradient(top, $startcolor, $stopcolor);
+    background:-ms-linear-gradient(top, $startcolor, $stopcolor);
+    background:linear-gradient(top, $startcolor, $stopcolor);
+    filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr=#{$startcolor}, EndColorStr=#{$stopcolor});
+    -ms-filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr=#{$startcolor}, EndColorStr=#{$stopcolor});
+    filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+}
+@mixin horizontal-gradient($startcolor, $stopcolor)
+{
+    background-image:-webkit-gradient(linear, left top, right top, from($startcolor), to($stopcolor));
+    background-image:-webkit-linear-gradient(left, $startcolor, $stopcolor);
+    background-image:-moz-linear-gradient(left,  $startcolor,  $stopcolor);
+    background-image:-o-linear-gradient(left, $startcolor, $stopcolor);
+    background-image:-ms-linear-gradient(left, $startcolor, $stopcolor);
+    background-image:linear-gradient(left, $startcolor, $stopcolor);
+    filter:progid:DXImageTransform.Microsoft.gradient(GradientType=1,StartColorStr=#{$startcolor}, EndColorStr=#{$stopcolor});
+    -ms-filter:progid:DXImageTransform.Microsoft.gradient(GradientType=1,StartColorStr=#{$startcolor}, EndColorStr=#{$stopcolor});
+}

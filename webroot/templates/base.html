@@ -1,148 +1,111 @@
 {% load static %}
 {% load sitetree %}
 <!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>{% if SITE_NAME %} {{ SITE_NAME }} {% endif %}</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
 
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<head>
-	<meta charset="utf-8" />
-	<!-- Set the viewport width to device width for mobile -->
-	<meta name="viewport" content="width=device-width" />
-	<title>{% block title %}South Dakota Code Camp{% endblock %}</title>
-	<!-- Included CSS Files -->
-	<link rel="stylesheet" href="{% static 'stylesheets/app.css' %}">
-	<script src="{% static 'javascripts/foundation/modernizr.foundation.js' %}"></script>
-	<!-- IE Fix for HTML5 Tags -->
-	<!--[if lt IE 9]>
-		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-</head>
-<body>
-	<div class="row">
-		<div class="twelve columns">
-			<h2>Welcome to Foundation</h2>
-			<p>This is version 3.0.9.</p>
-			<hr />
-			{% sitetree_menu from "cc" include "trunk" template 'sitetree/menu_foundation.html' %}
-		</div>
-	</div>
-	<div class="row">
-		<div class="twelve columns">
-		{% block body %}
-		<div class="eight columns">
-			<h3>The Grid</h3>
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-			<!-- Grid Example -->
-			<div class="row">
-				<div class="twelve columns">
-					<div class="panel">
-						<p>This is a twelve column section in a row. Each of these includes a div.panel element so you can see where the columns are - it's not required at all for the grid.</p>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="six columns">
-					<div class="panel">
-						<p>Six columns</p>
-					</div>
-				</div>
-				<div class="six columns">
-					<div class="panel">
-						<p>Six columns</p>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="four columns">
-					<div class="panel">
-						<p>Four columns</p>
-					</div>
-				</div>
-				<div class="four columns">
-					<div class="panel">
-						<p>Four columns</p>
-					</div>
-				</div>
-				<div class="four columns">
-					<div class="panel">
-						<p>Four columns</p>
-					</div>
-				</div>
-			</div>
+        <link rel="stylesheet" href="{% static 'cc12/css/main.css' %}">
+        <script src="{% static 'cc12/js/modernizr-2.6.1.min.js' %}"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
 
-			<h3>Tabs</h3>
-			<dl class="tabs">
-				<dd class="active"><a href="#simple1">Simple Tab 1</a></dd>
-				<dd><a href="#simple2">Simple Tab 2</a></dd>
-				<dd><a href="#simple3">Simple Tab 3</a></dd>
-			</dl>
-
-			<ul class="tabs-content">
-				<li class="active" id="simple1Tab">This is simple tab 1's content. Pretty neat, huh?</li>
-				<li id="simple2Tab">This is simple tab 2's content. Now you see it!</li>
-				<li id="simple3Tab">This is simple tab 3's content. It's, you know...okay.</li>
-			</ul>
-
-			<h3>Buttons</h3>
-
-      <div class="row">
-        <div class="six columns">
-          <p><a href="#" class="small button">Small Button</a></p>
-          <p><a href="#" class="button">Medium Button</a></p>
-          <p><a href="#" class="large button">Large Button</a></p>
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <div id="arrow_down_yellow"></div><div id="arrow_down_white"></div>
+                    <a class="brand" href="/"><span class=logo></span><span class=vm>SD</span>Code Camp<span class=vm>12</span></a>
+                    <div class="nav-collapse">
+{% sitetree_menu from "cc" include "trunk" template 'sitetree/menu_bootstrap.html' %}
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div>
         </div>
-        <div class="six columns">
-          <p><a href="#" class="small alert button">Small Alert Button</a></p>
-          <p><a href="#" class="success button">Medium Success Button</a></p>
-          <p><a href="#" class="large secondary button">Large Secondary Button</a></p>
+
+        <div id="MainContainer" class="container">
+            <!-- Main hero unit for a primary marketing message or call to action -->
+            {% block body %}
+            <div class="hero-unit">
+                <h1>Hello, world!</h1>
+                <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+                <p><a class="btn btn-cc12 btn-large">Learn more</a></p>
+            </div>
+
+            <div class="row">
+                <div class="span12 center">
+                    <h2>Heading</h2>
+                    <h3>It's like fat camp, without the diet</h3>
+                </div>
+            </div>
+
+            <!-- Example row of columns -->
+            <div class="row">
+                <div class="span4">
+                    <h4>Heading</h4>
+                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                </div>
+                <div class="span4">
+                    <h4>Heading</h4>
+                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                </div>
+                <div class="span4">
+                    <h5 class="center">Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</h5>
+                    <p class=center><a class="btn btn-cc12 btn-large" href="#">Submit a session</a></p>
+                </div>
+            </div>
+            {% endblock %}
+        </div> <!-- /container -->
+
+        <div id="MainFooter" class=navbar-fixed-bottom >
+            <div class="container">
+                <div class="foot-container">
+                    <div id="FollowBox">
+                        <p>follow</p><span class="share fb"></span><span class="share tw"></span>
+                    </div>
+                    <div id="FooterLogo">
+                        <a class="brand" href="/">
+                            <span class=logo></span><span class=vm>SD</span>Code Camp<span class=vm>12</span>
+                        </a>
+                    </div>
+                    <div id="SponsoredBy">
+                        <h4>Sponsored by:</h4>
+                        <p><a href="http://blendinteractive.com">Blend Interactive</a></p>
+                        <p>Boing</p>
+                        <p>American Family Insurance</p>
+                        <p>Budweiser</p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-		</div>
 
-		<div class="four columns">
-			<h4>Getting Started</h4>
-			<p>We're stoked you want to try Foundation! To get going, this file (index.html) includes some basic styles you can modify, play around with, or totally destroy to get going.</p>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="{% static 'cc12/js/jquery-1.8.0.min.js' %}"><\/script>')</script>
+        <script src="{% static 'cc12/js/plugins.js' %}"></script>
+        <script src="{% static 'cc12/js/main.js' %}"></script>
 
-			<h4>Other Resources</h4>
-			<p>Once you've exhausted the fun in this document, you should check out:</p>
-			<ul class="disc">
-				<li><a href="http://foundation.zurb.com/docs">Foundation Documentation</a><br />Everything you need to know about using the framework.</li>
-				<li><a href="http://github.com/zurb/foundation">Foundation on Github</a><br />Latest code, issue reports, feature requests and more.</li>
-				<li><a href="http://twitter.com/foundationzurb">@foundationzurb</a><br />Ping us on Twitter if you have questions. If you build something with this we'd love to see it (and send you a totally boss sticker).</li>
-			</ul>
-		</div>
-		{% endblock %}
-		</div>
-	</div>
-	
-	<!-- Included JS Files (Uncompressed) -->
-	<script src="{% static 'javascripts/foundation/jquery.js' %}"></script>
-	
-	<script src="{% static 'javascripts/foundation/jquery.foundation.accordion.js' %}"></script>
-	
-	<script src="{% static 'javascripts/foundation/jquery.foundation.alerts.js' %}"></script>
-	
-	<script src="{% static 'javascripts/foundation/jquery.foundation.buttons.js' %}"></script>
-	
-	<script src="{% static 'javascripts/foundation/jquery.foundation.forms.js' %}"></script>
-	
-	<script src="{% static 'javascripts/foundation/jquery.foundation.mediaQueryToggle.js' %}"></script>
-	
-	<script src="{% static 'javascripts/foundation/jquery.foundation.navigation.js' %}"></script>
-	
-	<script src="{% static 'javascripts/foundation/jquery.foundation.orbit.js' %}"></script>
-	
-	<script src="{% static 'javascripts/foundation/jquery.foundation.reveal.js' %}"></script>
-	
-	<script src="{% static 'javascripts/foundation/jquery.foundation.tabs.js' %}"></script>
-	
-	<script src="{% static 'javascripts/foundation/jquery.foundation.tooltips.js' %}"></script>
-	
-	<script src="{% static 'javascripts/foundation/jquery.placeholder.js' %}"></script>
-  <!-- Application Javascript, safe to override -->
-  <script src="{% static 'javascripts/foundation/app.js' %}"></script>
-</body>
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
 </html>

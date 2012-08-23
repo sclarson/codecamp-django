@@ -5,6 +5,7 @@ from models import Speaker, Session
 
 def speakers_index(request):
     speaker_list = Speaker.objects.all()
+    print dir(Speaker)
     return render_to_response('speakers/index.html', {
                               'speaker_list': speaker_list,
                               'request': request})
