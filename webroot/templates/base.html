@@ -7,7 +7,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>{% if SITE_NAME %} {{ SITE_NAME }} {% endif %}</title>
+        <title>{% if PAGE_NAME %}{{ PAGE_NAME }} : {% endif %}{% if SITE_NAME %}{{ SITE_NAME }}{% endif %}</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
@@ -22,39 +22,25 @@
 
         <div id="MainContainer" class="container">
             
-            {% block hero-unit %}
-            <!-- Main hero unit for a primary marketing message or call to action -->
-            <div class="hero-unit">
-                <h1>Hello, world!</h1>
-                <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-                <p><a class="btn btn-cc12 btn-large">Learn more</a></p>
-            </div>
-            {% endblock %}
+            {% block hero-unit %}{% endblock %}
 
             <div class="row">
                 <div class="span12 center">
                     <h2>{% block title %}South Dakota Code Camp{% endblock %}</h2>
-                    <h3>It's like fat camp, without the diet</h3>
+                    <h3>{%block subtitle %}It's like fat camp, without the diet{% endblock %}</h3>
                 </div>
             </div>
             
-            {% block body %}
-            <!-- Example row of columns -->
+            {% block body %}{% endblock %}
+
             <div class="row">
-                <div class="span4">
-                    <h4>Heading</h4>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                </div>
-                <div class="span4">
-                    <h4>Heading</h4>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                </div>
-                <div class="span4">
-                    <h5 class="center">Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</h5>
-                    <p class=center><a class="btn btn-cc12 btn-large" href="#">Submit a session</a></p>
+                <div class="span12 center">
+                    <h2>{% block title2 %}Join Us Today{% endblock %}</h2>
+                    <h3>{%block subtitle2 %}We want your money!{% endblock %}</h3>
                 </div>
             </div>
-            {% endblock %}
+
+            {% block subbody %}{% endblock %}
 
         </div> <!-- /container -->
 

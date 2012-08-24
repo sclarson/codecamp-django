@@ -14,6 +14,7 @@ $hover: $blue;
 /** GENERAL **/
 p { 
 	color: $dk_gray; 
+	font-size: 13px;
 }
 h1 {
 	font-family: BebasRegular, Helvetica, Arial, sans-serif;
@@ -33,12 +34,12 @@ h3 {
 }
 h4 {
 	color: $blue;
-	font: italic 14px Georgia,"Times New Roman", serif;
+	font: italic bold 14px Georgia,"Times New Roman", serif;
 	margin-bottom: 3px;
 }
 h5 {
 	color: $dk_gray;
-	font: italic 14px Georgia,"Times New Roman", serif;
+	font: italic 500 15px Georgia,"Times New Roman", serif;
 }
 h6 {
 	color: $dk_gray;
@@ -91,6 +92,27 @@ h6 {
 }
 .center {
 	text-align: center;
+}
+.hero-unit {
+	background: $blue;
+	h1 {
+		color: $white;
+		span {
+			font-family: Georgia, "Times New Roman", serif;
+			font-style: italic;
+			&.small {
+				font-size: 48px;
+				vertical-align:middle;
+			}
+		}
+	}
+	h3 {
+		color: $white;
+		border-top: 1px solid white;
+		border-bottom: 1px solid white;
+		display: inline-block;
+		padding: 10px;
+	}
 }
 
 /** HEADER **/
@@ -158,6 +180,9 @@ h6 {
 		.row {
 			p {
 				margin-bottom: 0;
+			}
+			h6 {
+				font: 28px BebasRegular, Helvetica, Arial, sans-serif;
 			}
 		}
 	}
