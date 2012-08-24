@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block hero-unit %}
+<div class="hero-unit">
+	<h3>We'll save a seat for you</h3>
+    <h1>Registration<br><span class="small">is</span> <span>Now Open</span></h1>
+    <p><a class="btn btn-cc12 btn-large" href="#">Register Now</a></p>
+</div>
+{% endblock %}
+
+{% block title %}South Dakota Code Camp{% endblock %}
+
+{% block body %}
+<!-- Example row of columns -->
+<div class="row">
+    <div class="span4">
+        <h4>Code Camp South Dakota</h4>
+        <p>is hosted by the Sioux Falls Developers Group and South Dakota .Net User Group with the sponsorship and support from many area businesses. Most of you may be wondering "What's a Code Camp?" Here is the basic idea.
+    </div>
+    <div class="span4">
+        <h4>A Code Camp IS:</h4>
+        <p>Community Driven<br>Free to attendees<br>Relevant to community members<br>NEVER during work hours (usually on Saturdays)
+        <h4>A Code Camp IS NOT:</h4>
+        <p>Product Demonstration/Sales<br>Corporate Marketing
+    </div>
+    <div class="span4">
+        <h5 class="center">If you're passionate about programming, design, or something we haven't thought of that you'd love to teach others about, you should</h5>
+        <p class=center><a class="btn btn-cc12 btn-large" href="/submit">Submit a session</a></p>
+    </div>
+</div>
+{% endblock %}
+
+{% block subbody %}
+<div class="row accordion">
+	<div class="span8">
+		<h4>Code Camp South Dakota</h4>
+		<p>{{ flatpage.content }}
+	</div>
+	<div class="span4">
+		<p class=center><a class="btn btn-cc12 btn-large" href="/submit">Submit a session</a></p>
+	</div>
+</div>
+{% endblock %}

@@ -1,22 +1,31 @@
 {% extends "base.html" %}
 
 {% block title %}South Dakota Code Camp Speakers{% endblock %}
+{% block subtitle %}Listen to them flap their jaws. It's actually more interesting than it sounds.{% endblock %}
 {% block body %}
 <div id="SpeakerIndex">
-<div class="row">
-    {% for speaker in speaker_list %}
-    <div class="span3">
-        <h4><a href="{{ speaker.get_absolute_url }}">{{speaker}}</a></h4>
-        {% if speaker.company %}<p>{{speaker.company}}{% endif %}
-        {% if speaker.twitter %}<p><a href="http://twitter.com/{{speaker.twitter}}" alt="twitter handle {{speaker.twitter}}">{{speaker.twitter}}</a>{% endif %}
-        {% if speaker.email %}<p>{{speaker.email}}{% endif %}
-        {% if speaker.website %}<p><a href="{{speaker.website}}" alt="website">Website</a>{% endif %}
-        {% if speaker.company_website %}<p><a href="{{speaker.company_website}}" alt="company website">Company Website</a>{% endif %}
+{% for speaker in speaker_list %}
+    <div class="row">
+        <div class="span4 hidden-phone">
+            <p><img src="{{speaker.photo}}" alt="{{speaker}}" />
+        </div>
+        <div class="span4">
+            <h6><a href="{{ speaker.get_absolute_url }}">{{speaker}}</a></h6>
+            <p>{{ speaker.bio }}</p>
+        </div>
+        <div class="span4">
+            <h4>Session</h4>
+            {% for session in speaker.session_set.all %}
+            <p>{{ session }}
+            {% endfor %}
+            <h4>Other things</h4>
+            {% if speaker.company %}<p>{{speaker.company}}{% endif %}
+            {% if speaker.twitter %}<p><a href="http://twitter.com/{{speaker.twitter}}" alt="twitter handle {{speaker.twitter}}">{{speaker.twitter}}</a>{% endif %}
+            {% if speaker.email %}<p>{{speaker.email}}{% endif %}
+            {% if speaker.website %}<p><a href="{{speaker.website}}" alt="website">Website</a>{% endif %}
+            {% if speaker.company_website %}<p><a href="{{speaker.company_website}}" alt="company website">Company Website</a>{% endif %}
+        </div>
     </div>
-    <div class="span3">
-        <p><img src="{{speaker.photo}}" alt="{{speaker}}" />
-    </div>
-    {% endfor %}
-</div>
+{% endfor %}
 </div>
 {% endblock %}

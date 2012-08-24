@@ -5,6 +5,7 @@ from datetime import date
 class Speaker(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
+    bio = models.TextField(blank=False, help_text="A short bio of the speaker.")
     company = models.CharField(max_length=100)
     twitter = models.CharField(blank=True, max_length=40)
     email = models.EmailField(max_length=254)
