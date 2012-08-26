@@ -53,7 +53,7 @@ h6 {
 	display: inline-block;
 }
 
-.alert {
+ul.messages li {
   padding: 8px 35px 8px 14px;
   margin-bottom: 20px;
   color: #c09853;
@@ -65,10 +65,19 @@ h6 {
           border-radius: 4px;
 }
 
-ul.messages li.success {
-  color: #468847;
-  background-color: #dff0d8;
-  border-color: #d6e9c6;
+ul.messages {
+	list-style-type: none;
+	li.error {
+ 		color: #b94a48;
+ 		background-color: #f2dede;
+  		border-color: #eed3d7;
+	}
+
+	li.success { 
+  		color: #468847;
+  		background-color: #dff0d8;
+  		border-color: #d6e9c6;
+	}
 }
 
 // vertical-middle logo

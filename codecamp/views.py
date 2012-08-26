@@ -1,6 +1,7 @@
 from django.shortcuts import get_object_or_404, render, render_to_response
 from django.contrib import messages
 from django.http import HttpResponseRedirect
+from django.db import IntegrityError
 from django.core.urlresolvers import reverse
 from models import Speaker, Session, SessionForm
 
@@ -44,10 +45,13 @@ def session_submit(request):
     if request.method == 'POST':
         session = SessionForm(request.POST)
         if session.is_valid():
-            session.save()
-            messages.add_message(request, messages.SUCCESS, 'Thanks! Session saved successfully.')
-            return HttpResponseRedirect(reverse('codecamp.views.session_submit'))
-            print "saved successfully"
+            try:
+                session.save()
+                messages.add_message(request, messages.SUCCESS, 'Thanks! Session saved successfully.')
+                return HttpResponseRedirect(reverse('codecamp.views.session_submit'))
+            except IntegrityError:
+                messages.add_message(request, messages.ERROR, 'There was an error saving your information please email help@southdakotacodecamp.net or contact us on twitter @sdcodecamp')
+                return HttpResponseRedirect(reverse('codecamp.views.session_submit'))
     else:
         session = SessionForm()
         print "returning new form"

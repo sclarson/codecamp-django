@@ -5238,7 +5238,7 @@ h6 {
   height: 50px;
   display: inline-block; }
 
-.alert {
+ul.messages li {
   padding: 8px 35px 8px 14px;
   margin-bottom: 20px;
   color: #c09853;
@@ -5249,6 +5249,12 @@ h6 {
   -moz-border-radius: 4px;
   border-radius: 4px; }
 
+ul.messages {
+  list-style-type: none; }
+ul.messages li.error {
+  color: #b94a48;
+  background-color: #f2dede;
+  border-color: #eed3d7; }
 ul.messages li.success {
   color: #468847;
   background-color: #dff0d8;
