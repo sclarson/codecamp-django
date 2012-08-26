@@ -1,5 +1,6 @@
 from django.db import models
 from django.forms import ModelForm
+from django.template.defaultfilters import slugify
 from django import forms
 from datetime import date
 
@@ -43,8 +44,16 @@ class Session(models.Model):
     def get_absolute_url(self):
         return "/sessions/%s,%i/" % self.slug % self.id
 
+    def save(self, *args, **kwargs):
+        if not self.pk:
+            self.slug = slugify(self.title)
+        return super(Session, self).save(*args,**kwargs)
+
 class SessionForm(ModelForm):
     class Meta:
         model = Session
         fields = ('title', 'abstract',)
     email = models.CharField(max_length=254)
+
+    
+
