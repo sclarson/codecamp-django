@@ -1,6 +1,6 @@
-from django.shortcuts import get_object_or_404
-from django.shortcuts import render_to_response
-from models import Speaker, Session
+from django.shortcuts import get_object_or_404, render, render_to_response
+from django.contrib import messages
+from models import Speaker, Session, SessionForm
 
 
 def speakers_index(request):
@@ -19,7 +19,7 @@ def speaker_detail(request, slug, id):
                               'speaker': speaker,
                               'photo': photo_url.replace('webroot/', ''),
                               'request': request
-    })
+                              })
 
 
 def sessions_index(request):
@@ -36,3 +36,19 @@ def session_detail(request, slug, id):
                               'PAGE_NAME': session.title,
                               'session': session,
                               'request': request})
+
+
+def session_submit(request):
+    if request.method == 'POST':
+        session = SessionForm(request.POST)
+        if session.is_valid():
+            session.save()
+            messages.add_message(request, messages.SUCCESS, 'Thanks! Session saved successfully.')
+            print "saved successfully"
+    else:
+        session = SessionForm()
+        print "returning new form"
+
+    return render(request,'sessions/submit.html', {
+                              'request': request,
+                              'form': session, })

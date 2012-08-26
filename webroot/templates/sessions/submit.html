@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}South Dakota Code Camp Sessions{% endblock %}
+{% block body %}
+<div id="SessionIndex">
+<div class="row">
+    {% if messages %}
+    <ul class="messages">
+    {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}
+        </li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+    <form action="{% url session_submit %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit" />
+    </form>
+</div>
+</div>
+{% endblock %}

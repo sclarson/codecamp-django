@@ -1,4 +1,6 @@
 from django.db import models
+from django.forms import ModelForm
+from django import forms
 from datetime import date
 
 
@@ -40,3 +42,9 @@ class Session(models.Model):
 
     def get_absolute_url(self):
         return "/sessions/%s,%i/" % self.slug % self.id
+
+class SessionForm(ModelForm):
+    class Meta:
+        model = Session
+        fields = ('title', 'abstract',)
+    email = models.CharField(max_length=254)
