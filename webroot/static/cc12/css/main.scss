@@ -1,7 +1,7 @@
-@import "mixins.scss";
-@import "fonts.css";
-@import "bootstrap.css";
-@import "bootstrap-responsive.css";
+@import "mixins";
+@import "fonts";
+@import "bootstrap";
+@import "bootstrap-responsive";
 
 $yellow: #f1c400;
 $white: #FFF;
@@ -93,8 +93,15 @@ h6 {
 .center {
 	text-align: center;
 }
-.hero-unit {
+.carousel-control {
+	top: 50%;
+}
+.well {
 	background: $blue;
+	height: 350px;
+	.well-copy {
+		padding:30px 50px;
+	}
 	h1 {
 		color: $white;
 		span {
@@ -112,6 +119,24 @@ h6 {
 		border-bottom: 1px solid white;
 		display: inline-block;
 		padding: 10px;
+	}
+	img {
+		float: right;
+	}
+	&#Campfire {
+		background: $blue url('../img/BlueBG.png') repeat-x;
+	}
+	&#Camper {
+		background: $red url('../img/OrangeBG.png') repeat-x;
+		img {
+			padding:51px 44px;
+		}
+	}
+	&#Canoe {
+		background: $dk_gray url('../img/GrayBG.png') repeat-x;
+		img {
+			padding:66px 0;
+		}
 	}
 }
 
@@ -137,6 +162,10 @@ h6 {
 			top:10px;
 			left:-60px;
 		}
+	}
+	.btn.btn-navbar {
+		background:$blue;
+		margin-top: 12px;
 	}
 	.nav {
 		font-size: 16px;
@@ -169,6 +198,11 @@ h6 {
 			.nav {
 				float: right;
 			}
+		}
+	}
+	.nav-collapse.in.collapse {
+		.nav a {
+			background:$yellow;
 		}
 	}
 }
@@ -271,4 +305,4 @@ h6 {
 
 
 
-@import "ie.css";
+@import "ie";
