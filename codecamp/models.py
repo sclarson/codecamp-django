@@ -8,7 +8,8 @@ from datetime import date
 class Speaker(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
-    bio = models.TextField(blank=False, help_text="A short bio of the speaker.")
+    bio = models.TextField(blank=False,
+                           help_text="A short bio of the speaker.")
     company = models.CharField(max_length=100)
     twitter = models.CharField(blank=True, max_length=40)
     email = models.EmailField(max_length=254)
@@ -31,7 +32,8 @@ class Session(models.Model):
     YEARS = ((2012, 2012), )
     speakers = models.ManyToManyField(Speaker)
     title = models.CharField(max_length=60)
-    abstract = models.TextField(blank=True, help_text="A short summary of the session.")
+    abstract = models.TextField(blank=True,
+                                help_text="A short summary of the session.")
     year = models.IntegerField(choices=YEARS, default=date.today().year)
     slug = models.SlugField(unique=True)
 
@@ -47,13 +49,21 @@ class Session(models.Model):
     def save(self, *args, **kwargs):
         if not self.pk:
             self.slug = slugify(self.title)
-        return super(Session, self).save(*args,**kwargs)
+        return super(Session, self).save(*args, **kwargs)
+
+
+class SubmittedSession(models.Model):
+    LEVELS = ((0, "N/A"), (100, 100), (200, 200), (300, 300), (400, 400))
+    title = models.CharField(max_length=120)
+    level = models.IntegerField(choices=LEVELS, default=0)
+    abstract = models.TextField(blank=True,
+                                help_text="A short summary of the session.")
+    email = models.EmailField(max_length=254)
+
+    def __unicode__(self):
+        return "{0} - {1}".format(self.email, self.title)
+
 
 class SessionForm(ModelForm):
     class Meta:
-        model = Session
-        fields = ('title', 'abstract',)
-    email = models.CharField(max_length=254)
-
-    
-
+        model = SubmittedSession
