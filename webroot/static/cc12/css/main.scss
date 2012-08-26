@@ -106,6 +106,7 @@ ul.messages {
 	position:absolute;
 	top:70px;
 	left:7px;
+	z-index:999;
 }
 .btn-cc12 {
 	background:$yellow;
@@ -166,6 +167,9 @@ ul.messages {
 			padding:66px 0;
 		}
 	}
+}
+.main-heading {
+	margin-top: 70px;
 }
 
 /** HEADER **/
@@ -237,7 +241,7 @@ ul.messages {
 
 /** MAIN **/
 #MainContainer {
-	margin-top: 90px;
+	margin-top: 71px;
 	#SpeakerIndex {
 		.row {
 			p {
@@ -253,77 +257,80 @@ ul.messages {
 /** FOOTER **/
 #MainFooter {
 	background: $yellow;
+	margin-top: 90px;
 	&.navbar-fixed-bottom {
 		position: relative;
 	}
-	.foot-container {
-		margin-top:30px;
-		#FooterLogo {
-			margin-bottom: 60px;
-			overflow:hidden;
-			position:relative;
-			.brand{
-				color:$white;
-				font-family: BebasRegular, Helvetica, Arial, sans-serif;
-				font-size: 18px;
-				line-height: 38px;
-				margin-left:47px;
-				text-transform:uppercase;
-				&:hover { 
-					text-decoration: none;
-				}
-				.logo {
-					background-size: 45px 32px;
-					height: 32px;
-					left:0;
-					position: absolute;
-					top: 5px;
-					width: 45px;
-				}
-				.vm {
-					font-size:12px;
+	.footer-inner {
+		.container {
+			padding-top:30px;
+			#FooterLogo {
+				margin-bottom: 60px;
+				overflow:hidden;
+				position:relative;
+				.brand{
+					color:$white;
+					font-family: BebasRegular, Helvetica, Arial, sans-serif;
+					font-size: 18px;
+					line-height: 38px;
+					margin-left:47px;
+					text-transform:uppercase;
+					&:hover { 
+						text-decoration: none;
+					}
+					.logo {
+						background-size: 45px 32px;
+						height: 32px;
+						left:0;
+						position: absolute;
+						top: 5px;
+						width: 45px;
+					}
+					.vm {
+						font-size:12px;
+					}
 				}
 			}
-		}
-		#FollowBox {
-			float: right;
-			min-width: 125px;
-			p {
-				color: $white;
-				display: inline-block;
-				float: left;
-				line-height: 31px;
-			}
-			.share {
-				display: block;
-				float: left;
-				height:31px;
-				margin-left: 5px;
-				width:31px;
+			#FollowBox {
+				float: right;
+				min-width: 125px;
+				p {
+					color: $white;
+					display: inline-block;
+					float: left;
+					line-height: 31px;
+				}
+				.share {
+					display: block;
+					float: left;
+					height:31px;
+					margin-left: 5px;
+					width:31px;
 
-				&.fb {
-					background:url(../img/share_sprite.png) 0 0;
-					&:hover {
-						background:url(../img/share_sprite.png) 0 31px;
+					&.fb {
+						background:url(../img/share_sprite.png) 0 0;
+						&:hover {
+							background:url(../img/share_sprite.png) 0 31px;
+						}
 					}
-				}
-				&.tw {
-					background:url(../img/share_sprite.png) 31px 0;
-					&:hover {
-						background:url(../img/share_sprite.png) 31px 31px;
+					&.tw {
+						background:url(../img/share_sprite.png) 31px 0;
+						&:hover {
+							background:url(../img/share_sprite.png) 31px 31px;
+						}
 					}
 				}
 			}
-		}
-		#SponsoredBy {
-			font-size: 12px;
-			margin-bottom: 60px;
-			p {
-				margin: 0;
-				a {
-					color: $dk_gray;
-					&:hover,&:active {
-						color: $hover;
+			#SponsoredBy {
+				font-size: 12px;
+				margin-bottom: 60px;
+				p {
+					margin: 0;
+					a {
+						color: $dk_gray;
+						&:hover,&:active {
+							color: $hover;
+						}
 					}
 				}
 			}
@@ -331,6 +338,22 @@ ul.messages {
 	}
 }
 
-
-
 @import "ie";
+
+@media (max-width: 979px) {
+	#MainContainer {
+		margin-top:-21px;
+	}
+}
+@media (max-width: 767px) {
+	#MainFooter {
+		margin-right: -20px;
+		margin-left: -20px;
+		.footer-inner {
+			padding: 5px;
+			.container {
+				margin: 0 10px;
+			}
+		}
+	}
+}
