@@ -1,5 +1,7 @@
 from django.shortcuts import get_object_or_404, render, render_to_response
 from django.contrib import messages
+from django.http import HttpResponseRedirect
+from django.core.urlresolvers import reverse
 from models import Speaker, Session, SessionForm
 
 
@@ -44,6 +46,7 @@ def session_submit(request):
         if session.is_valid():
             session.save()
             messages.add_message(request, messages.SUCCESS, 'Thanks! Session saved successfully.')
+            return HttpResponseRedirect(reverse('codecamp.views.session_submit'))
             print "saved successfully"
     else:
         session = SessionForm()
