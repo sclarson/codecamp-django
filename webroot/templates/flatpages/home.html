@@ -3,39 +3,7 @@
 
 {% block hero-unit %}
 
-
-<div id="myCarousel" class="carousel slide">
-    <!-- Carousel items -->
-    <div class="carousel-inner">
-        <div id="Campfire" class="well item active">
-            <img class=" visible-desktop hidden-mobile hidden-tablet" src="{% static 'cc12/img/Site.png' %}" alt-="Code Camp Campfire" />
-            <div class="well-copy">
-                <h3>We'll save a seat for you</h3>
-                <h1>Registration<br><span class="small">is</span> <span>Now Open</span></h1>
-                <p><a class="btn btn-cc12 btn-large" href="#">Register Now</a></p>
-            </div>
-        </div>
-        <div id="Camper" class="well item">
-            <img class=" visible-desktop hidden-mobile hidden-tablet" src="{% static 'cc12/img/Camper.png' %}" alt-="Code Camp Camper" />
-            <div class="well-copy">
-                <h3>We'll save a seat for you</h3>
-                <h1>Registration<br><span class="small">is</span> <span>Now Open</span></h1>
-                <p><a class="btn btn-cc12 btn-large" href="#">Register Now</a></p>
-            </div>
-        </div>
-        <div id="Canoe" class="well item">
-            <img class=" visible-desktop hidden-mobile hidden-tablet" src="{% static 'cc12/img/Canoe.png' %}" alt-="Code Camp Canoe" />
-            <div class="well-copy">
-                <h3>We'll save a seat for you</h3>
-                <h1>Registration<br><span class="small">is</span> <span>Now Open</span></h1>
-                <p><a class="btn btn-cc12 btn-large" href="#">Register Now</a></p>
-            </div>
-        </div>
-    </div>
-  <!-- Carousel nav -->
-  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
-</div>
+    {% include "codecamp/scroller.html" %}
 
 {% endblock %}
 
