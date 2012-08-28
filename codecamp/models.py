@@ -12,20 +12,22 @@ class Speaker(models.Model):
                            help_text="A short bio of the speaker.")
     company = models.CharField(max_length=100)
     twitter = models.CharField(blank=True, max_length=40)
-    email = models.EmailField(max_length=254)
+    email = models.EmailField(blank=False, max_length=254)
     website = models.URLField(blank=True)
     company_website = models.URLField(blank=True)
     slug = models.SlugField(unique=True)
     photo = models.ImageField(upload_to='webroot/static/images')
 
     class Meta:
-        ordering = ['-last_name']
+        ordering = ['last_name']
 
     def __unicode__(self):
         return self.first_name + " " + self.last_name
 
     def get_absolute_url(self):
-        return "/speakers/%s,%i/" % self.slug % self.id
+        return ('speaker_detail', (), {'slug': self.slug,
+                                       'id': self.id})
+    get_absolute_url = models.permalink(get_absolute_url)
 
 
 class Session(models.Model):
@@ -38,13 +40,15 @@ class Session(models.Model):
     slug = models.SlugField(unique=True)
 
     class Meta:
-        ordering = ['-title']
+        ordering = ['title']
 
     def __unicode__(self):
         return self.title
 
     def get_absolute_url(self):
-        return "/sessions/%s,%i/" % self.slug % self.id
+        return ('session_detail', (), {'slug': self.slug,
+                                       'id': self.id})
+    get_absolute_url = models.permalink(get_absolute_url)
 
     def save(self, *args, **kwargs):
         if not self.pk:
