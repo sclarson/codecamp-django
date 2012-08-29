@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-
+{% load chunks %}
 {% block hero-unit %}
 
     {% include "codecamp/scroller.html" %}
@@ -11,7 +11,7 @@
 
 {% block body %}
 <!-- Example row of columns -->
-<div class="row">
+<!--<div class="row">
     <div class="span4">
         <h4>Code Camp South Dakota</h4>
         <p>is hosted by the Sioux Falls Developers Group and South Dakota .Net User Group with the sponsorship and support from many area businesses. Most of you may be wondering "What's a Code Camp?" Here is the basic idea.
@@ -26,7 +26,8 @@
         <h5 class="center">If you're passionate about programming, design, or something we haven't thought of that you'd love to teach others about, you should</h5>
         <p class=center><a class="btn btn-cc12 btn-large" href="/submit">Submit a session</a></p>
     </div>
-</div>
+</div>-->
+{% chunk "home_page_promos" %}
 {% endblock %}
 
 {% block subbody %}

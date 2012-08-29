@@ -128,6 +128,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'codecamp',
     'sitetree',
+    'chunks'
 )
 
 # Set in local_settings
