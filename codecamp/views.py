@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.db import IntegrityError
 from django.core.urlresolvers import reverse
-from models import Speaker, Session, SessionForm
+from models import FrontpageScroller, Speaker, Session, SessionForm
 
 
 def speakers_index(request):
@@ -56,6 +56,15 @@ def session_submit(request):
         session = SessionForm()
         print "returning new form"
 
-    return render(request,'sessions/submit.html', {
+    return render(request, 'sessions/submit.html', {
                               'request': request,
                               'form': session, })
+
+
+def scroller(request):
+    scrollers = FrontpageScroller.objects.all()
+    for scroller in scrollers:
+        print dir(scroller)
+    return render(request, 'codecamp/scroller.html', {
+        "scrollers": scrollers,
+        'request': request})

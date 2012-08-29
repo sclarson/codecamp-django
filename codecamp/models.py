@@ -3,6 +3,7 @@ from django.forms import ModelForm
 from django.template.defaultfilters import slugify
 from django import forms
 from datetime import date
+from markdown import markdown
 
 
 class Speaker(models.Model):
@@ -71,3 +72,16 @@ class SubmittedSession(models.Model):
 class SessionForm(ModelForm):
     class Meta:
         model = SubmittedSession
+
+
+class FrontpageScroller(models.Model):
+    body = models.TextField(blank=False, help_text='A short bit of copy to put on the scroller')
+    link = models.URLField(blank=False, help_text="The url the button will point at")
+    title = models.CharField(max_length=60)
+
+    def __unicode__(self):
+        return self.title
+
+    def save(self, force_insert=False, force_update=False):
+        self.body_html = markdown(self.body)
+        return super(FrontpageScroller, self).save(force_insert, force_update)
