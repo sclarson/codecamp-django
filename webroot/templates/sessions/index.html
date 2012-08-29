@@ -5,14 +5,19 @@
 <div id="SessionIndex">
     {% for session in session_list %}
     <div class="row">
-        <div class="span2">
-            <h4><a href="{{ session.get_absolute_url }}">{{session}}</a></h4>
-                {% for speaker in session.speakers.all %}
-                <p><a href="{{ speaker.get_absolute_url }}">{{speaker}}</a></p>
-                {% endfor %}
-        </div>
-        <div class="span10">
+        <div class="span9">
+            <h3 class="index-title"><a href="{{ session.get_absolute_url }}">{{session}}</a></h3>
             <p>{{session.abstract}}
+        </div>
+        <div class="span3 about-session">
+            <ul>
+            {% for speaker in session.speakers.all %}
+            <li><h4>Presented by:</h4><p><a href="{{ speaker.get_absolute_url }}">{{speaker}}</a></p>
+            {% if speaker.company %}<li><h4>Company:</h4><p>{% if speaker.company_website %}<a href="{{speaker.company_website}}" alt="company website">{% endif %}{{speaker.company}}{% if speaker.company_website %}</a>{% endif %}{% endif %}
+            {% if speaker.website %}<li><h4>Web:</h4><p><a href="{{speaker.website}}" alt="website">{{speaker.website}}</a>{% endif %}
+            {% if speaker.twitter %}<li><h4>Twitter:</h4><p><a href="http://twitter.com/{{speaker.twitter}}" alt="twitter handle {{speaker.twitter}}">{{speaker.twitter}}</a>{% endif %}
+            {% endfor %}
+            </ul>
         </div>
     </div>
     {% endfor %}

@@ -9,11 +9,12 @@ $blue: #198DAD;
 $red: #EB4008;
 $dk_gray:#484848;
 
+$copy: $dk_gray;
 $hover: $blue;
 
 /** GENERAL **/
 p { 
-	color: $dk_gray; 
+	color: $copy; 
 	font-size: 13px;
 }
 h1 {
@@ -259,14 +260,37 @@ ul.errorlist {
 	#MainCarousel {
 		margin-top: 71px;
 	}
+	.index-title {
+		font: 28px BebasRegular, Helvetica, Arial, sans-serif;
+	}
+	.about-session {
+		margin-top: 25px;
+		p {
+			display: inline-block;
+			margin: 0;
+		}
+		h4 {
+			display: inline-block;
+			margin: 0;
+			padding-right: 10px;
+		}
+		a {
+			color: $copy;
+		}
+		ul {
+			margin: 0;
+			li {
+				line-height:14px;
+				list-style-type: none;
+				margin-bottom: 5px;
+			}
+		}
+	}
 	#SpeakerIndex {
 		.row {
 			margin-top:10px;
 			p {
 				margin-bottom: 0;
-			}
-			h6 {
-				font: 28px BebasRegular, Helvetica, Arial, sans-serif;
 			}
 		}
 	}
