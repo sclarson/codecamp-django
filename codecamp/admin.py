@@ -1,7 +1,5 @@
 from django.contrib import admin
-from codecamp.models import Speaker
-from codecamp.models import Session, SubmittedSession
-
+from codecamp.models import Session, SubmittedSession, Speaker, FrontpageScroller
 
 
 class SpeakerAdmin(admin.ModelAdmin):
@@ -15,3 +13,4 @@ class SessionAdmin(admin.ModelAdmin):
 admin.site.register(Speaker, SpeakerAdmin)
 admin.site.register(Session, SessionAdmin)
 admin.site.register(SubmittedSession)
+admin.site.register(FrontpageScroller)
