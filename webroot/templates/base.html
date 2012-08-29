@@ -1,4 +1,5 @@
 {% load static %}
+{% load chunks %}
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -27,7 +28,7 @@
             <div class="row main-heading">
                 <div class="span12 center">
                     <h2>{% block title %}South Dakota Code Camp{% endblock %}</h2>
-                    <h3>{%block subtitle %}It's like fat camp, without the diet{% endblock %}</h3>
+                    <h3>{%block subtitle %}Mosy On Over - Nov 10th{% endblock %}</h3>
                 </div>
             </div>
             
@@ -36,7 +37,7 @@
             <div class="row main-heading">
                 <div class="span12 center">
                     <h2>{% block title2 %}Join Us Today{% endblock %}</h2>
-                    <h3>{%block subtitle2 %}We want your money!{% endblock %}</h3>
+                    <h3>{%block subtitle2 %}<a href="http://www.eventbrite.com/event/4216204782/es2?rank=1&utm_source=ccsite&utm_campaign=join_bar">Register!</a>{% endblock %}</h3>
                 </div>
             </div>
 
@@ -54,7 +55,7 @@
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            var _gaq=[['_setAccount','UA-26246483-1'],['_trackPageview']];
             (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
             g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
             s.parentNode.insertBefore(g,s)}(document,'script'));
