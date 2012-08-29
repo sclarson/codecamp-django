@@ -186,9 +186,6 @@ ul.errorlist {
 		}
 	}
 }
-.main-heading {
-	margin-top: 70px;
-}
 
 /** HEADER **/
 .navbar-fixed-top .navbar-inner, .navbar-static-top .navbar-inner {
@@ -259,9 +256,12 @@ ul.errorlist {
 
 /** MAIN **/
 #MainContainer {
-	margin-top: 71px;
+	#MainCarousel {
+		margin-top: 71px;
+	}
 	#SpeakerIndex {
 		.row {
+			margin-top:10px;
 			p {
 				margin-bottom: 0;
 			}
@@ -269,6 +269,14 @@ ul.errorlist {
 				font: 28px BebasRegular, Helvetica, Arial, sans-serif;
 			}
 		}
+	}
+	#SessionIndex {
+		.row {
+			margin-top: 20px;
+		}
+	}
+	.main-heading {
+		margin-top: 100px;
 	}
 }
 

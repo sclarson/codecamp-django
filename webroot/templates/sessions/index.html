@@ -3,19 +3,27 @@
 {% block title %}South Dakota Code Camp Sessions{% endblock %}
 {% block body %}
 <div id="SessionIndex">
-<div class="row">
     {% for session in session_list %}
-    <div class="span3">
-        <h4><a href="{{ session.get_absolute_url }}">{{session}}</a></h4>
-        <p>{{session.year}}</p>
-        <ul>
-            {% for speaker in session.speakers.all %}
-            <li><a href="{{ speaker.get_absolute_url }}">{{speaker}}</a></li>
-            {% endfor %}
-        </ul>
-        <p>{{session.abstract}}
+    <div class="row">
+        <div class="span2">
+            <h4><a href="{{ session.get_absolute_url }}">{{session}}</a></h4>
+                {% for speaker in session.speakers.all %}
+                <p><a href="{{ speaker.get_absolute_url }}">{{speaker}}</a></p>
+                {% endfor %}
+        </div>
+        <div class="span10">
+            <p>{{session.abstract}}
+        </div>
     </div>
     {% endfor %}
 </div>
+{% endblock %}
+
+{% block subbody %}
+<div class="row main-heading">
+    <div class="span12 center">
+        <h3>Do you have something interesting to talk about?</h3>
+        <p class=center><a class="btn btn-cc12 btn-large" href="/submit">Submit a session</a></p>
+    </div>
 </div>
 {% endblock %}
