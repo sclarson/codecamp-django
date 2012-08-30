@@ -127,6 +127,7 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'django.contrib.staticfiles',
     'markdown',
+    'haystack',
     'codecamp',
     'sitetree',
     'chunks',
@@ -170,5 +171,12 @@ LOGGING = {
         },
     }
 }
+
+
+HAYSTACK_SITECONF = 'codecamp.search_sites'
+
+HAYSTACK_SEARCH_ENGINE = 'solr'
+
+HAYSTACK_SOLR_URL = 'http://127.0.0.1:8983/solr'
 
 #from webroot.local_settings import *

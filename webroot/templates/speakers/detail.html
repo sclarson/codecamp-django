@@ -2,15 +2,31 @@
 
 {% block title %}Speaker Profile - {{ speaker }}{% endblock %}
 {% block body %}
-<ul>
-    <li>{{speaker}}</li>
-    <li>{{speaker.first_name}}</li>
-    <li>{{speaker.last_name}}</li>
-    <li>{{speaker.company}}</li>
-    <li>{{speaker.twitter}}</li>
-    <li>{{speaker.email}}</li>
-    <li>{{speaker.website}}</li>
-    <li>{{speaker.company_website}}</li>
-</ul>
-<img src="/{{speaker.photo}}" />
+<div id="SpeakerDetail">
+    <div class="row">
+        <div class="span4 hidden-phone">
+            <p><img src="{{speaker.photo}}" alt="{{speaker}}" />
+        </div>
+        <div class="span4">
+        	<h4>About</h4>
+            <p>{{ speaker.bio }}</p>
+        </div>
+        <div class="span4 about">
+            <h4>Other things</h4>
+            {% if speaker.company %}<p>{{speaker.company}}{% endif %}
+            {% if speaker.twitter %}<p><a href="http://twitter.com/{{speaker.twitter}}" alt="twitter handle {{speaker.twitter}}">{{speaker.twitter}}</a>{% endif %}
+            {% if speaker.website %}<p><a href="{{speaker.website}}" alt="website">Website</a>{% endif %}
+            {% if speaker.company_website %}<p><a href="{{speaker.company_website}}" alt="company website">Company Website</a>{% endif %}
+        </div>
+    </div>
+    <h6>Session</h6>
+    {% for session in speaker.session_set.all %}
+    <div class="row">
+        <div class="span12">
+            <h4><a href="{{ session.get_absolute_url }}">{{session.title}}</a></h4>
+            <p>{{session.abstract}}
+        </div>
+    </div>
+	{% endfor %}
+</div>
 {% endblock %}
