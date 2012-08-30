@@ -17,7 +17,7 @@ class Speaker(models.Model):
     website = models.URLField(blank=True)
     company_website = models.URLField(blank=True)
     slug = models.SlugField(unique=True)
-    photo = models.ImageField(upload_to='media/images/speakers')
+    photo = models.ImageField(upload_to='images/speakers')
 
     class Meta:
         ordering = ['last_name']
