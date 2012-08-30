@@ -16,11 +16,9 @@ def speakers_index(request):
 
 def speaker_detail(request, slug, id):
     speaker = get_object_or_404(Speaker, pk=id)
-    photo_url = str(speaker.photo.url)
     return render_to_response('speakers/detail.html', {
                               'PAGE_NAME': speaker.first_name,
                               'speaker': speaker,
-                              'photo': photo_url.replace('webroot/', ''),
                               'request': request
                               })
 
