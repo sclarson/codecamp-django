@@ -249,7 +249,8 @@ ul.errorlist {
 		position: relative;
 		.nav-collapse {
 			.nav {
-				float: right;
+				float:right;
+				z-index: 1;
 			}
 		}
 	}
@@ -294,6 +295,10 @@ ul.errorlist {
 	#SpeakerIndex {
 		.row {
 			margin-top:10px;
+		}
+	}
+	.row {
+		.about {
 			p {
 				margin-bottom: 0;
 			}
@@ -396,8 +401,20 @@ ul.errorlist {
 @import "ie";
 
 @media (max-width: 979px) {
+	.navbar-inner {
+		.container {
+			.nav-collapse {
+				.nav {
+					float:none;
+				}
+			}
+		}
+	}
 	#MainContainer {
 		margin-top:-21px;
+		#MainCarousel {
+			margin-top:0;
+		}
 	}
 }
 @media (max-width: 767px) {
@@ -411,4 +428,8 @@ ul.errorlist {
 			}
 		}
 	}
+	.carousel-inner {
+		z-index: -1;
+	}
+
 }
