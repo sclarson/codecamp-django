@@ -7,7 +7,7 @@
 {% for speaker in speaker_list %}
     <div class="row">
         <div class="span4 hidden-phone">
-            <p><img src="{{speaker.photo}}" alt="{{speaker}}" />
+            <p><img src="/{{speaker.photo}}" alt="{{speaker}}" />
         </div>
         <div class="span4">
             <h3 class="index-title"><a href="{{ speaker.get_absolute_url }}">{{speaker}}</a></h3>
