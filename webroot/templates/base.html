@@ -6,16 +6,7 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>{% if PAGE_NAME %}{{ PAGE_NAME }} : {% endif %}{% if SITE_NAME %}{{ SITE_NAME }}{% endif %}</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
-
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-
-        <link rel="stylesheet" href="{% static 'cc12/css/main.css' %}">
-        <script src="{% static 'cc12/js/modernizr-2.6.1.min.js' %}"></script>
+{% include "header.html" %}
     </head>
     <body>
         

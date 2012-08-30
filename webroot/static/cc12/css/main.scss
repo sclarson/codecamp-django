@@ -406,6 +406,15 @@ ul.errorlist {
 			.nav-collapse {
 				.nav {
 					float:none;
+					li {
+						border-bottom: 1px solid white;
+						a {
+							margin: 0;
+						}
+						&:last-child {
+							border-bottom: none;
+						}
+					}
 				}
 			}
 		}
@@ -431,5 +440,8 @@ ul.errorlist {
 	.carousel-inner {
 		z-index: -1;
 	}
-
+	.navbar .brand {
+		margin-left: 60px;
+		padding: 14px 0 15px 5px;
+	}
 }
