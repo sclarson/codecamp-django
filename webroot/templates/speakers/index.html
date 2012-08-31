@@ -6,8 +6,8 @@
 <div id="SpeakerIndex">
 {% for speaker in speaker_list %}
     <div class="row">
-        <div class="span4 hidden-phone">
-            <p><img src="/{{speaker.photo}}" alt="{{speaker}}" />
+        <div class="span4 hidden-phone speaker-image">
+            <p><img src="{{speaker.photo}}" alt="{{speaker}}" />
         </div>
         <div class="span4">
             <h3 class="index-title"><a href="{{ speaker.get_absolute_url }}">{{speaker}}</a></h3>
@@ -19,10 +19,9 @@
             <p>{{ session }}
             {% endfor %}
             <h4>Other things</h4>
-            {% if speaker.company %}<p>{{speaker.company}}{% endif %}
+            {% if speaker.company %}<p>{% if speaker.company_website %}<a href="{{speaker.company_website}}" alt="{{speaker.company}}">{% endif %}{{speaker.company}}{% if speaker.company_website %}</a>{% endif %}{% endif %}
             {% if speaker.twitter %}<p><a href="http://twitter.com/{{speaker.twitter}}" alt="twitter handle {{speaker.twitter}}">{{speaker.twitter}}</a>{% endif %}
-            {% if speaker.website %}<p><a href="{{speaker.website}}" alt="website">Website</a>{% endif %}
-            {% if speaker.company_website %}<p><a href="{{speaker.company_website}}" alt="company website">Company Website</a>{% endif %}
+            {% if speaker.website %}<p><a href="{{speaker.website}}" alt="website">{{ speaker.first_name }}'s Blog</a>{% endif %}
         </div>
     </div>
 {% endfor %}

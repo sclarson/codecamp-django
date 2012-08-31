@@ -3,8 +3,8 @@
 {% block title %}Speaker Profile - {{ speaker }}{% endblock %}
 {% block body %}
 <div id="SpeakerDetail">
-    <div class="row">
-        <div class="span4 hidden-phone">
+    <div class="row speaker-row">
+        <div class="span4 hidden-phone speaker-image">
             <p><img src="/{{speaker.photo}}" alt="{{speaker}}" />
         </div>
         <div class="span4">
@@ -13,17 +13,20 @@
         </div>
         <div class="span4 about">
             <h4>Other things</h4>
-            {% if speaker.company %}<p>{{speaker.company}}{% endif %}
+            {% if speaker.company %}<p>{% if speaker.company_website %}<a href="{{speaker.company_website}}" alt="{{speaker.company}}">{% endif %}{{speaker.company}}{% if speaker.company_website %}</a>{% endif %}{% endif %}
             {% if speaker.twitter %}<p><a href="http://twitter.com/{{speaker.twitter}}" alt="twitter handle {{speaker.twitter}}">{{speaker.twitter}}</a>{% endif %}
-            {% if speaker.website %}<p><a href="{{speaker.website}}" alt="website">Website</a>{% endif %}
-            {% if speaker.company_website %}<p><a href="{{speaker.company_website}}" alt="company website">Company Website</a>{% endif %}
+            {% if speaker.website %}<p><a href="{{speaker.website}}" alt="website">{{ speaker.first_name }}'s Blog</a>{% endif %}
         </div>
     </div>
-    <h6>Session</h6>
+    <!--<div class=row>
+        <div class=span12>
+            <h6>Session</h6>
+        </div>
+    </div>-->
     {% for session in speaker.session_set.all %}
-    <div class="row">
+    <div class="row session-row">
         <div class="span12">
-            <h4><a href="{{ session.get_absolute_url }}">{{session.title}}</a></h4>
+            <h3 class="index-title"><a href="{{ session.get_absolute_url }}">{{session.title}}</a></h3>
             <p>{{session.abstract}}
         </div>
     </div>
