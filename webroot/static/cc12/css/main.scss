@@ -173,22 +173,24 @@ ul.errorlist {
 		display: inline-block;
 		padding: 10px;
 	}
-	img {
-		float: right;
-	}
 	&#Campfire {
 		background: $blue url('../img/BlueBG.png') repeat-x;
 	}
 	&#Camper {
 		background: $red url('../img/OrangeBG.png') repeat-x;
-		img {
-			padding:51px 44px;
-		}
 	}
 	&#Canoe {
 		background: $dk_gray url('../img/GrayBG.png') repeat-x;
-		img {
-			padding:66px 0;
+	}
+	&.row {
+		.span5 {
+			line-height: 350px;
+			img {
+				vertical-align:middle;
+			}
+		}
+		.span6 {
+			height: 350px;
 		}
 	}
 }
@@ -443,5 +445,14 @@ ul.errorlist {
 	.navbar .brand {
 		margin-left: 60px;
 		padding: 14px 0 15px 5px;
+	}
+	.well {
+		.span6 {
+			text-align: center;
+		}
+		.span5 {
+			display:none;
+			visibility: hidden;
+		}
 	}
 }
