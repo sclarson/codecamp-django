@@ -1,42 +1,54 @@
-from django.shortcuts import get_object_or_404, render, render_to_response
+from django.template import RequestContext, loader
+from django.shortcuts import get_object_or_404, render, get_list_or_404
 from django.contrib import messages
-from django.http import HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect
 from django.db import IntegrityError
 from django.core.urlresolvers import reverse
 from models import FrontpageScroller, Speaker, Session, SessionForm
 
 
 def speakers_index(request):
-    speaker_list = Speaker.objects.all()
-    return render_to_response('speakers/index.html', {
-                              'PAGE_NAME': 'Speakers',
-                              'speaker_list': speaker_list,
-                              'request': request})
+    speaker_list = get_list_or_404(Speaker)
+    t = loader.get_template('speakers/index.html')
+    c = RequestContext(request, {
+        'speaker_list': speaker_list,
+        'PAGE_NAME': 'Speakers',
+        'request': request})
+    response = HttpResponse(t.render(c))
+    return response
 
 
 def speaker_detail(request, slug, id):
     speaker = get_object_or_404(Speaker, pk=id)
-    return render_to_response('speakers/detail.html', {
-                              'PAGE_NAME': speaker.first_name,
-                              'speaker': speaker,
-                              'request': request
-                              })
+    t = loader.get_template('speakers/detail.html')
+    c = RequestContext(request, {
+        'PAGE_NAME': str(speaker.first_name + ' ' + speaker.last_name),
+        'speaker': speaker,
+        'request': request})
+    response = HttpResponse(t.render(c))
+    return response
 
 
 def sessions_index(request):
-    session_list = Session.objects.all()
-    return render_to_response('sessions/index.html', {
-                              'PAGE_NAME': 'Sessions',
-                              'session_list': session_list,
-                              'request': request})
+    session_list = get_list_or_404(Session)
+    t = loader.get_template('sessions/index.html')
+    c = RequestContext(request, {
+        'PAGE_NAME': 'Sessions',
+        'session_list': session_list,
+        'request': request})
+    response = HttpResponse(t.render(c))
+    return response
 
 
 def session_detail(request, slug, id):
     session = get_object_or_404(Session, pk=id)
-    return render_to_response('sessions/detail.html', {
-                              'PAGE_NAME': session.title,
-                              'session': session,
-                              'request': request})
+    t = loader.get_template('sessions/detail.html')
+    c = RequestContext(request, {
+        'PAGE_NAME': session.title,
+        'session': session,
+        'request': request})
+    response = HttpResponse(t.render(c))
+    return response
 
 
 def session_submit(request):
@@ -53,10 +65,13 @@ def session_submit(request):
     else:
         session = SessionForm()
         print "returning new form"
-
-    return render(request, 'sessions/submit.html', {
-                              'request': request,
-                              'form': session, })
+    t = loader.get_template('sessions/submit.html')
+    c = RequestContext(request, {
+        'PAGE_NAME': 'Session Submission',
+        'form': session,
+        'request': request})
+    response = HttpResponse(t.render(c))
+    return response
 
 
 def scroller(request):

@@ -140,6 +140,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.request',
     'django.contrib.auth.context_processors.auth',
     'django.contrib.messages.context_processors.messages',
+    "codecamp.context_processors.site_name",
     )
 
 
@@ -179,4 +180,4 @@ HAYSTACK_SEARCH_ENGINE = 'solr'
 
 HAYSTACK_SOLR_URL = 'http://127.0.0.1:8983/solr'
 
-#from webroot.local_settings import *
+SITE_NAME = 'South Dakota Code Camp'
