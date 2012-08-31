@@ -384,6 +384,12 @@ ul.errorlist {
 						}
 					}
 					&.tw {
+						background:url(../img/share_sprite.png) 62px 0;
+						&:hover {
+							background:url(../img/share_sprite.png) 62px 31px;
+						}
+					}
+					&.gp {
 						background:url(../img/share_sprite.png) 31px 0;
 						&:hover {
 							background:url(../img/share_sprite.png) 31px 31px;
