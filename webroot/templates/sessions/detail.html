@@ -3,16 +3,21 @@
 {% block title %}Session {{ session.id }} - {{ session.title }}{% endblock %}
 {% block body %}
 <div id="SessionDetail">
-    <div class="row">
+    <div class="row session-row">
         <div class="span12">
+            <h4>Session Abstract</h4>
             <p>{{session.abstract}}
         </div>
     </div>
-    <h6>Presented by:</h6>
+    <!--<div class=row>
+        <div class=span12>
+            <h6>Presented by:</h6>
+        </div>
+    </div>-->
     {% for speaker in session.speakers.all %}
-    <div class="row">
+    <div class="row speaker-row">
         <div class="span12">
-            <h4><a href="{{ speaker.get_absolute_url }}">{{speaker}}</a></h4>
+            <h3 class="index-title"><a href="{{ speaker.get_absolute_url }}">{{speaker}}</a></h3>
             <p>{{ speaker.bio }}</p>
         </div>
     </div>
