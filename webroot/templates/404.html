@@ -8,65 +8,83 @@
                 background: #b3d4fc;
                 text-shadow: none;
             }
-
             ::selection {
                 background: #b3d4fc;
                 text-shadow: none;
             }
-
             html {
                 padding: 30px 10px;
                 font-size: 20px;
                 line-height: 1.4;
-                color: #737373;
-                background: #f0f0f0;
+                color: #444444;
+                background: white;
                 -webkit-text-size-adjust: 100%;
                 -ms-text-size-adjust: 100%;
             }
-
             html,
             input {
                 font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
             }
-
             body {
-                max-width: 500px;
-                _width: 500px;
+                max-width: 720px;
                 padding: 30px 20px 50px;
-                border: 1px solid #b3b3b3;
-                border-radius: 4px;
                 margin: 0 auto;
-                box-shadow: 0 1px 10px #a7a7a7, inset 0 1px 0 #fff;
-                background: #fcfcfc;
             }
-
             h1 {
-                margin: 0 10px;
-                font-size: 50px;
-                text-align: center;
-            }
-
-            h1 span {
                 color: #bbb;
+                margin: 0 10px;
+                text-transform: uppercase;
+                font-size: 70px;
+                letter-spacing: -4px;
+                line-height: 64px;
             }
-
+            h1 span {
+                text-transform: capitalize;
+                font-family: Georgia, "Times New Roman", Times, serif;;
+                font-style: italic;
+                font-size: 63px;
+            }
             h3 {
                 margin: 1.5em 0 0.5em;
             }
-
             p {
                 margin: 1em 0;
             }
-
             ul {
                 padding: 0 0 0 40px;
                 margin: 1em 0;
             }
-
             .container {
-                max-width: 380px;
-                _width: 380px;
                 margin: 0 auto;
+            }
+            .fourofour-sign {
+                background: url('http://southdakotacodecamp.net/static/cc12/img/sign.png');
+                float: right;
+                height: 491px;
+                width: 280px;
+            }
+            .fourofour-content {
+                max-width: 350px;
+                text-align: center;
+            }
+            .fourofour-red {
+                color:#EB4008;
+                font-family: Georgia, "Times New Roman", Times, serif;;
+                font-style: italic;
+                margin-bottom: 45px;
+            }
+            .fourofour-blue {
+                color: #198DAD;
+                font: italic bold 14px Georgia,"Times New Roman", serif;
+                margin-bottom: 3px;
+            }
+            .fourofour-options {
+                display: inline-block;
+                margin: 0;
+                padding: 0;
+            }
+            .fourofour-options li {
+                font-size: 14px;
             }
 
             /* google search */
@@ -106,17 +124,16 @@
                 margin: 5px 0 0;
                 white-space: nowrap;
                 cursor: pointer;
-                background-color: #f5f5f5;
-                background-image: -webkit-linear-gradient(rgba(255,255,255,0), #f1f1f1);
-                background-image: -moz-linear-gradient(rgba(255,255,255,0), #f1f1f1);
-                background-image: -ms-linear-gradient(rgba(255,255,255,0), #f1f1f1);
-                background-image: -o-linear-gradient(rgba(255,255,255,0), #f1f1f1);
                 -webkit-appearance: none;
                 -moz-appearance: none;
                 appearance: none;
                 *overflow: visible;
                 *display: inline;
                 *zoom: 1;
+                background: #F1C400;
+                color: white;
+                text-transform: uppercase;
+                font-size: 14px;
             }
 
             #goog-wm-sb:hover,
@@ -141,13 +158,16 @@
     </head>
     <body>
         <div class="container">
-            <h1>Not found <span>:(</span></h1>
-            <p>Sorry, but the page you were trying to view does not exist.</p>
-            <p>It looks like this was the result of either:</p>
-            <ul>
-                <li>a mistyped address</li>
-                <li>an out-of-date link</li>
-            </ul>
+            <div class="fourofour-sign"></div>
+            <div class="fourofour-content">
+                <h1>You Are<br><span>Lost</span></h1>
+                <p class="fourofour-red">Sorry, but the page you were trying to view does not exist.
+                <p class="fourofour-blue">It looks like this was the result of either:
+                <ul class="fourofour-options">
+                    <li>a mistyped address</li>
+                    <li>an out-of-date link</li>
+                </ul>
+            </div>
             <script>
                 var GOOG_FIXURL_LANG = (navigator.language || '').slice(0,2),GOOG_FIXURL_SITE = location.host;
             </script>
