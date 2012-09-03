@@ -1,0 +1,3 @@
+{{ object.get_speaker_name }}
+{{ object.bio }}
+{{ object.company }}

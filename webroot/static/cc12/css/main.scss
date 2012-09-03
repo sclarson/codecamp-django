@@ -5,9 +5,11 @@
 
 $yellow: #f1c400;
 $white: #FFF;
-$blue: #198DAD;
+$blue: #099ebc;
 $red: #EB4008;
 $dk_gray:#484848;
+$grad_black: #222;
+$grad_grey:lighten($grad_black,50%);
 
 $copy: $dk_gray;
 $hover: $blue;
@@ -32,6 +34,7 @@ h2 {
 h3 {
 	color: $red;
 	font: italic 23px Georgia, "Times New Roman", serif;
+	margin-bottom: 50px;
 }
 h4 {
 	color: $blue;
@@ -139,7 +142,8 @@ ul.errorlist {
 	-moz-border-radius: 0;
 	border-radius: 0;
 	color: $white;
-	font:100 13px Helvetica, Arial, sans-serif;
+	font:100 13px BebasRegular, Helvetica, Arial, sans-serif;
+	letter-spacing: 1px;
 	text-shadow: 0 0 0;
 	text-transform: uppercase;
 }
@@ -147,7 +151,32 @@ ul.errorlist {
 	text-align: center;
 }
 .carousel-control {
-	top: 50%;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 50%;
+	height: 35px;
+	margin-top: -18px;
+	font-size: 60px;
+	font-weight: 100;
+	line-height: 25px;
+	color: white;
+	text-align: left;
+	border: none;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+}
+.carousel-control.left {
+	@include horizontal-gradient($grad_black,$grad_grey);
+}
+.carousel-control.right {
+	@include horizontal-gradient($grad_grey, $grad_black);
+	right: 0;
+	left: auto;
+	text-align:right;
 }
 .well {
 	background: $blue;
@@ -161,7 +190,7 @@ ul.errorlist {
 			font-family: Georgia, "Times New Roman", serif;
 			font-style: italic;
 			&.small {
-				font-size: 48px;
+				font-size: 28px;
 				vertical-align:middle;
 			}
 		}
@@ -271,7 +300,7 @@ ul.errorlist {
 	.index-title {
 		font: 28px BebasRegular, Helvetica, Arial, sans-serif;
 	}
-	.about-session {
+	.about-session, .about-speaker {
 		margin-top: 25px;
 		p {
 			display: inline-block;
@@ -299,20 +328,13 @@ ul.errorlist {
 			margin-top:20px;
 		}
 	}
-	.row {
-		.about {
-			p {
-				margin-bottom: 0;
-			}
-		}
-	}
 	#SessionIndex {
 		.row {
 			margin-top: 20px;
 		}
 	}
 	.main-heading {
-		margin-top: 100px;
+		margin-top: 90px;
 	}
 	.speaker-image {
 		img {

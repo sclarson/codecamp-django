@@ -30,6 +30,7 @@ urlpatterns = patterns('',
     (r'register$', redirect_to, {'url': 'http://www.eventbrite.com/event/4216204782/es2?utm_source=sdcc_redir'}),
     # Haystack
     (r'^search/', include('haystack.urls')),
+    (r'^search$', redirect_to, {'url': '/search/'}),
     # Flatpages
     (r'', include('django.contrib.flatpages.urls')),
 

@@ -7,21 +7,22 @@
 {% for speaker in speaker_list %}
     <div class="row">
         <div class="span4 hidden-phone speaker-image">
-            <p><img src="{{speaker.photo}}" alt="{{speaker}}" />
+            <p><a href="{{ speaker.get_absolute_url }}"><img src="{{speaker.photo}}" alt="{{speaker}}" /></a>
         </div>
         <div class="span4">
             <h3 class="index-title"><a href="{{ speaker.get_absolute_url }}">{{speaker}}</a></h3>
             <p>{{ speaker.bio }}</p>
         </div>
-        <div class="span4 about">
-            <h4>Session</h4>
-            {% for session in speaker.session_set.all %}
-            <p>{{ session }}
-            {% endfor %}
-            <h4>Other things</h4>
-            {% if speaker.company %}<p>{% if speaker.company_website %}<a href="{{speaker.company_website}}" alt="{{speaker.company}}">{% endif %}{{speaker.company}}{% if speaker.company_website %}</a>{% endif %}{% endif %}
-            {% if speaker.twitter %}<p><a href="http://twitter.com/{{speaker.twitter}}" alt="twitter handle {{speaker.twitter}}">{{speaker.twitter}}</a>{% endif %}
-            {% if speaker.website %}<p><a href="{{speaker.website}}" alt="website">{{ speaker.first_name }}'s Blog</a>{% endif %}
+        <div class="span4 about-speaker">
+            <ul>
+                <li><h4>Session:</h4>
+                {% for session in speaker.session_set.all %}
+                <p>{% if session.title %}{{ session.title }}{% else %}TBD{% endif %}
+                {% endfor %}
+                {% if speaker.company %}<li><h4>Company:</h4><p>{% if speaker.company_website %}<a href="{{speaker.company_website}}" alt="{{speaker.company}}">{% endif %}{{speaker.company}}{% if speaker.company_website %}</a>{% endif %}{% endif %}
+                {% if speaker.twitter %}<li><h4>Twitter:</h4><p><a href="http://twitter.com/{{speaker.twitter}}" alt="twitter handle {{speaker.twitter}}">{{speaker.twitter}}</a>{% endif %}
+                {% if speaker.website %}<li><h4>Web:</h4><p><a href="{{ speaker.website }}" alt="website">{{ speaker.website }}</a>{% endif %}
+            </ul>
         </div>
     </div>
 {% endfor %}
