@@ -7,9 +7,13 @@ $yellow: #f1c400;
 $white: #FFF;
 $blue: #099ebc;
 $red: #EB4008;
+$black: #222;
+$btn-hover: #E6E6E6;
 $dk_gray:#484848;
 $grad_black: #222;
 $grad_grey:lighten($grad_black,50%);
+$serif: Georgia, "Times New Roman", serif;
+$sans-serif: BebasRegular, Helvetica, Arial, sans-serif;
 
 $copy: $dk_gray;
 $hover: $blue;
@@ -20,11 +24,11 @@ p {
 	font-size: 13px;
 }
 h1 {
-	font-family: BebasRegular, Helvetica, Arial, sans-serif;
+	font-family: $sans-serif;
 }
 h2 {
 	color: $dk_gray;
-	font: 48px BebasRegular, Helvetica, Arial, sans-serif;
+	font: 48px $sans-serif;
 	letter-spacing: 1px;
 	border-top: 1px solid lightgray;
 	border-bottom: 1px solid lightgray;
@@ -33,21 +37,21 @@ h2 {
 }
 h3 {
 	color: $red;
-	font: italic 23px Georgia, "Times New Roman", serif;
+	font: italic 23px $serif;
 	margin-bottom: 50px;
 }
 h4 {
 	color: $blue;
-	font: italic bold 14px Georgia,"Times New Roman", serif;
+	font: italic bold 14px $serif;
 	margin-bottom: 3px;
 }
 h5 {
 	color: $dk_gray;
-	font: italic 500 15px Georgia,"Times New Roman", serif;
+	font: italic 500 15px $serif;
 }
 h6 {
 	color: $dk_gray;
-	font: 12px BebasRegular, Helvetica, Arial, sans-serif;
+	font: 12px $sans-serif;
 	letter-spacing: 1px;
 }
 
@@ -142,7 +146,7 @@ ul.errorlist {
 	-moz-border-radius: 0;
 	border-radius: 0;
 	color: $white;
-	font:100 13px BebasRegular, Helvetica, Arial, sans-serif;
+	font:100 13px $sans-serif;
 	letter-spacing: 1px;
 	text-shadow: 0 0 0;
 	text-transform: uppercase;
@@ -151,32 +155,50 @@ ul.errorlist {
 	text-align: center;
 }
 .carousel-control {
+	background: $yellow;
 	position: absolute;
 	top: 100%;
 	left: 0;
-	width: 50%;
+	width: 70px;
 	height: 35px;
 	margin-top: -18px;
 	font-size: 60px;
 	font-weight: 100;
 	line-height: 25px;
 	color: white;
-	text-align: left;
+	text-align: center;
 	border: none;
 	-webkit-border-radius: 0;
 	-moz-border-radius: 0;
 	border-radius: 0;
-	opacity: 0.5;
-	filter: alpha(opacity=50);
-}
-.carousel-control.left {
-	@include horizontal-gradient($grad_black,$grad_grey);
-}
-.carousel-control.right {
-	@include horizontal-gradient($grad_grey, $grad_black);
-	right: 0;
-	left: auto;
-	text-align:right;
+	opacity: 1;
+	filter: alpha(opacity=100);
+	&:hover, &:focus {
+		background: $btn-hover;
+		color: $black;
+		opacity: 1;
+		filter: alpha(opacity=100);
+	}
+	&.left {
+		span {
+			font-size:12px;
+			font-family: $sans-serif;
+			line-height:35px;
+			vertical-align:top;
+			margin-right:10px;
+		}
+	}
+	&.right {
+		right: auto;
+		left: 72px;
+		span {
+			font-size:12px;
+			font-family: $sans-serif;
+			line-height:35px;
+			vertical-align:top;
+			margin-left: 10px;
+		}
+	}
 }
 .well {
 	background: $blue;
@@ -187,7 +209,7 @@ ul.errorlist {
 	h1 {
 		color: $white;
 		span {
-			font-family: Georgia, "Times New Roman", serif;
+			font-family: $serif;
 			font-style: italic;
 			&.small {
 				font-size: 28px;
@@ -233,7 +255,7 @@ ul.errorlist {
 .navbar {
 	border-bottom: 11px solid $white;
 	color:$white;
-	font-family: BebasRegular, Helvetica, Arial, sans-serif;
+	font-family: $sans-serif;
 	.brand {
 		color:$white;
 		font-size: 30px;
@@ -250,6 +272,10 @@ ul.errorlist {
 	.btn.btn-navbar {
 		background:$blue;
 		margin-top: 12px;
+		border-radius: 0;
+		-webkit-box-shadow:0 0 0;
+		-moz-box-shadow: 0 0 0;
+		box-shadow: 0 0 0;
 	}
 	.nav {
 		font-size: 16px;
@@ -298,7 +324,7 @@ ul.errorlist {
 		margin-top: 71px;
 	}
 	.index-title {
-		font: 28px BebasRegular, Helvetica, Arial, sans-serif;
+		font: 28px $sans-serif;
 	}
 	.about-session, .about-speaker {
 		margin-top: 25px;
@@ -362,7 +388,7 @@ ul.errorlist {
 				position:relative;
 				.brand{
 					color:$white;
-					font-family: BebasRegular, Helvetica, Arial, sans-serif;
+					font-family: $sans-serif;
 					font-size: 18px;
 					line-height: 38px;
 					margin-left:47px;
@@ -461,6 +487,17 @@ ul.errorlist {
 		margin-top:-21px;
 		#MainCarousel {
 			margin-top:0;
+		}
+	}
+	.carousel-control {
+		width: 49.8%;
+		&.left {
+			text-align: left;
+		}
+		&.right {
+			right: 0;
+			left: auto;
+			text-align:right;
 		}
 	}
 }
