@@ -26,9 +26,6 @@ urlpatterns = patterns('',
     # Speakers
     (r'^speakers$', redirect_to, {'url': '/speakers/'}),
     url(r'^speakers/$', include('codecamp.urls.speakers')),
-    #url(r'^speakers/$', 'codecamp.views.speakers_index'),
-    
-    #url(r'^speakers/(?P<slug>[-\w\d]+),(?P<id>\d+)/$', 'codecamp.views.speaker_detail', name='speaker_detail'),
     (r'register$', redirect_to, {'url': 'http://www.eventbrite.com/event/4216204782/es2?utm_source=sdcc_redir'}),
     # Haystack
     (r'^search/', include('haystack.urls')),
