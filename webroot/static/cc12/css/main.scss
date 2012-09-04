@@ -223,6 +223,7 @@ ul.errorlist {
 		border-bottom: 1px solid white;
 		display: inline-block;
 		padding: 10px;
+        margin: 10px 0;
 	}
 	&#Campfire {
 		background: $blue url('../img/BlueBG.png') repeat-x;
@@ -520,6 +521,9 @@ ul.errorlist {
 		padding: 14px 0 15px 5px;
 	}
 	.well {
+        .well-copy {
+            padding:30px 0;
+        }
 		.span6 {
 			text-align: center;
 		}
