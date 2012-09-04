@@ -4,6 +4,8 @@ from codecamp.models import Speaker
 
 
 urlpatterns = patterns('',
-    (r'^$', 'django.views.generic.list_detail.object_list',
-    url(r'^speakers/(?P<slug>[-\w\d]+),(?P<id>\d+)/$','codecamp.views.speaker_detail', name='speaker_detail'),
-)
+                       url(r'^$', 'codecamp.views.speakers_index'),
+                       url(r'^(?P<slug>[-\w\d]+),(?P<id>\d+)/$',
+                           'codecamp.views.speaker_detail',
+                           name='speaker_detail'),
+                       )
