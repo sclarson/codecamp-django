@@ -532,4 +532,9 @@ ul.errorlist {
 			visibility: hidden;
 		}
 	}
+    #MainContainer {
+        #MainCarousel {
+            z-index: -1;            
+        }
+    }
 }
