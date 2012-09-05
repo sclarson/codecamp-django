@@ -25,7 +25,7 @@ urlpatterns = patterns('',
     url(r'^sessions/submit$', 'codecamp.views.session_submit', name='session_submit'),
     # Speakers
     (r'^speakers$', redirect_to, {'url': '/speakers/'}),
-    url(r'^speakers/$', include('codecamp.urls.speakers')),
+    url(r'^speakers/', include('codecamp.urls.speakers')),
     (r'register$', redirect_to, {'url': 'http://www.eventbrite.com/event/4216204782/es2?utm_source=sdcc_redir'}),
     # Haystack
     (r'^search/', include('haystack.urls')),

@@ -6,8 +6,7 @@ from models import Speaker, Session
 class SpeakerIndex(SearchIndex):
     """docstring for SpeakerIndex"""
     text = CharField(document=True, use_template=True)
-    last_name = CharField(model_attr='last_name')
-    first_name = CharField(model_attr='first_name')
+    full_name = CharField(model_attr='full_name')
     bio = CharField(model_attr='bio')
     company = CharField(model_attr='company')
 
