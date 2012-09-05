@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
 {% block title %}South Dakota Code Camp Speakers{% endblock %}
-{% block subtitle %}Listen to them flap their jaws. It's actually more interesting than it sounds.{% endblock %}
+{% block subtitle %}Listen to them flap their jaws. {% endblock %}
 {% block body %}
 <div id="SpeakerIndex">
 {% for speaker in speaker_list %}
     <div class="row">
         <div class="span4 hidden-phone speaker-image">
-            <p><a href="{{ speaker.get_absolute_url }}"><img src="{{speaker.photo}}" alt="{{speaker}}" /></a>
+            <p><a href="{{ speaker.get_absolute_url }}"><img src="{{MEDIA_URL}}{{ speaker.photo}}" alt="{{speaker}}" /></a>
         </div>
         <div class="span4">
             <h3 class="index-title"><a href="{{ speaker.get_absolute_url }}">{{speaker}}</a></h3>
