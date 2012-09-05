@@ -8,7 +8,7 @@ from models import FrontpageScroller, Speaker, Session, SessionForm
 
 
 def speakers_index(request):
-    speaker_list = get_list_or_404(Speaker)
+    speaker_list = Speaker.objects.all()
     t = loader.get_template('speakers/index.html')
     c = RequestContext(request, {
         'speaker_list': speaker_list,
@@ -30,7 +30,7 @@ def speaker_detail(request, slug, id):
 
 
 def sessions_index(request):
-    session_list = get_list_or_404(Session)
+    session_list = Session.objects.all()
     t = loader.get_template('sessions/index.html')
     c = RequestContext(request, {
         'PAGE_NAME': 'Sessions',
