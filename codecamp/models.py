@@ -7,6 +7,7 @@ from markdown import markdown
 
 
 class Speaker(models.Model):
+    """Speaker model docstring"""
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     bio = models.TextField(blank=False,
@@ -23,8 +24,13 @@ class Speaker(models.Model):
     class Meta:
         ordering = ['last_name']
 
+    def _get_full_name(self):
+        """Returns the speaker's full name."""
+        return '%s %s' % (self.first_name, self.last_name)
+    full_name = property(_get_full_name)
+
     def __unicode__(self):
-        return self.first_name + " " + self.last_name
+        return self.full_name
 
     def get_absolute_url(self):
         return ('speaker_detail', (), {'slug': self.slug,
@@ -33,6 +39,7 @@ class Speaker(models.Model):
 
 
 class Session(models.Model):
+    """Session model docstring"""
     YEARS = ((2012, 2012), )
     speakers = models.ManyToManyField(Speaker)
     title = models.CharField(max_length=60)
@@ -59,6 +66,7 @@ class Session(models.Model):
 
 
 class SubmittedSession(models.Model):
+    """SubmittedSession model docstring"""
     LEVELS = ((0, "N/A"), (100, 100), (200, 200), (300, 300), (400, 400))
     title = models.CharField(max_length=120)
     level = models.IntegerField(choices=LEVELS, default=0)
