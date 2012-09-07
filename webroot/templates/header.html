@@ -1,9 +1,14 @@
 {% load static %}
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<link rel="alternate" type="application/rss+xml" title="South Dakota Code Camp Sessions (RSS2)" href="/sessions/rss" />
+<link rel="alternate" type="application/atom+xml" title="South Dakota Code Camp Sessions (ATOM)" href="/sessions/atom">
 <title>{% if PAGE_NAME %}{{ PAGE_NAME }} : {% endif %}{% if SITE_NAME %}{{ SITE_NAME }}{% endif %}</title>
-<meta name="description" content="">
+<meta name="description" content="The site the South Dakota Code Camp Community uses to organize Code Camp">
+<meta name="keywords" content="Code Camp, South Dakota Code Camp, South Dakota, Sioux Falls, SoDak, Code">
+<meta name="robots" content="all,follow" />
 <meta name="viewport" content="width=device-width">
+<meta name="pinterest" content="nopin">
 <link rel="shortcut icon" href="{% static 'favicon.ico' %}">
 <link rel="apple-touch-icon" sizes="57x57" href="{% static 'touch-icon-iphone-114.png' %}" />
 <link rel="apple-touch-icon" sizes="114x114" href="{% static 'touch-icon-iphone-114.png' %}" />

@@ -1,6 +1,6 @@
 from django.conf.urls import patterns, include, url
 from django.views.generic.simple import redirect_to
-from codecamp.feeds import SessionsFeed
+from codecamp.feeds import SessionsFeedAtom, SessionsFeedRSS2
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -24,7 +24,8 @@ urlpatterns = patterns('',
     (r'sessions/', include('codecamp.urls.sessions')),
     (r'^submit$', redirect_to, {'url': '/sessions/submit'}),
     url(r'^sessions/submit$', 'codecamp.views.session_submit', name='session_submit'),
-    (r'^sessions/feed/$', SessionsFeed()),
+    (r'^sessions/atom$', SessionsFeedAtom()),
+    (r'^sessions/rss$', SessionsFeedRSS2()),
     # Speakers
     (r'^speakers$', redirect_to, {'url': '/speakers/'}),
     (r'^speakers/', include('codecamp.urls.speakers')),
