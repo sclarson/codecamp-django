@@ -131,6 +131,7 @@ INSTALLED_APPS = (
     'codecamp',
     'sitetree',
     'chunks',
+    'tastypie',
 )
 
 # Set in local_settings
