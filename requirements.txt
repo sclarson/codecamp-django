@@ -6,3 +6,4 @@ pil==1.1.7
 django-markdown==0.1.0
 django-haystack==1.2.7
 pysolr
+django-tastypie==0.9.11

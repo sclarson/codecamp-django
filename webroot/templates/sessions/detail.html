@@ -6,6 +6,7 @@
     <div class="row session-row">
         <div class="span12">
             <h4>Session Abstract</h4>
+            <p>{% if session.time %}{{ session.get_time_display }}{% endif %} - {% if session.room %}{{ session.get_room_display }}{% endif %}
             <p>{{session.abstract}}
         </div>
     </div>

@@ -1,12 +1,17 @@
 from django.conf.urls import patterns, include, url
 from django.views.generic.simple import redirect_to
 from codecamp.feeds import SessionsFeedAtom, SessionsFeedRSS2
+from tastypie.api import Api
+from codecamp.api.resources import SessionResource
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 import codecamp
 
 admin.autodiscover()
+
+v1_api = Api(api_name='v1')
+v1_api.register(SessionResource())
 
 urlpatterns = patterns('',
     # Examples:
@@ -33,6 +38,8 @@ urlpatterns = patterns('',
     # Haystack
     (r'^search/', include('haystack.urls')),
     (r'^search$', redirect_to, {'url': '/search/'}),
+    # API
+    (r'^api/', include(v1_api.urls)),
     # Flatpages
     (r'', include('django.contrib.flatpages.urls')),
 
