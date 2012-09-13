@@ -132,6 +132,7 @@ INSTALLED_APPS = (
     'sitetree',
     'chunks',
     'tastypie',
+    'south',
 )
 
 # Set in local_settings
