@@ -1,6 +1,8 @@
 from django.conf.urls import patterns, include, url
+from django.contrib.sitemaps import FlatPageSitemap
 from django.views.generic.simple import redirect_to
 from codecamp.feeds import SessionsFeedAtom, SessionsFeedRSS2
+from codecamp.sitemaps import SpeakerSiteMap, SessionSiteMap
 from tastypie.api import Api
 from codecamp.api.resources import SessionResource
 
@@ -12,6 +14,12 @@ admin.autodiscover()
 
 v1_api = Api(api_name='v1')
 v1_api.register(SessionResource())
+
+sitemaps = {
+    'flatpages': FlatPageSitemap,
+    'Speakers': SpeakerSiteMap,
+    'Sessions': SessionSiteMap,
+}
 
 urlpatterns = patterns('',
     # Examples:
@@ -41,6 +49,7 @@ urlpatterns = patterns('',
     # API
     (r'^api/', include(v1_api.urls)),
     # Flatpages
+    (r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap', {'sitemaps': sitemaps}),
     (r'', include('django.contrib.flatpages.urls')),
 
 )
