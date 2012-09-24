@@ -3,7 +3,6 @@ from codecamp.models import Session, Speaker
 from datetime import datetime, timedelta
 
 
-
 class CodeCampSiteMapBase(Sitemap):
     changefreq = "never"
     priority = 0.5
