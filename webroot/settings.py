@@ -141,7 +141,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.request',
     'django.contrib.auth.context_processors.auth',
     'django.contrib.messages.context_processors.messages',
-    "codecamp.context_processors.site_name",
+    "codecamp.context_processors.required_site_settings",
     )
 
 
