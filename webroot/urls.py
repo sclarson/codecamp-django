@@ -26,7 +26,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     # Sessions
     (r'^sessions$', redirect_to, {'url': '/sessions/'}), 
-    (r'sessions/', include('codecamp.urls.sessions')),
+    (r'sessions/', include('codecamp.urls.submittedsessions')),
     (r'^submit$', redirect_to, {'url': '/sessions/submit'}),
     url(r'^sessions/submit$', 'codecamp.views.session_submit', name='session_submit'),
     (r'^sessions/atom$', SessionsFeedAtom()),

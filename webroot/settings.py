@@ -1,9 +1,8 @@
 # Django settings for codecamp project.
 import os
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
-BASE_DIR = os.path.abspath(os.path.join(PROJECT_DIR, '..'))
-
-DEBUG = True
+BASE_DIR = os.path.abspath(os.path.join(PROJECT_DIR, '../../'))
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -183,3 +182,8 @@ HAYSTACK_SEARCH_ENGINE = 'solr'
 HAYSTACK_SOLR_URL = 'http://127.0.0.1:8983/solr'
 
 SITE_NAME = 'South Dakota Code Camp'
+
+try:
+   from local_settings import *
+except ImportError, e:
+   pass

@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.http import HttpResponse, HttpResponseRedirect
 from django.db import IntegrityError
 from django.core.urlresolvers import reverse
-from models import FrontpageScroller, Speaker, Session, SessionForm
+from models import FrontpageScroller, Speaker, Session, SessionForm, SubmittedSession
 
 
 def speakers_index(request):
@@ -51,14 +51,26 @@ def session_detail(request, slug, id):
     return response
 
 
+def submittedsession_index(request):
+    sessions = SubmittedSession.objects.all()
+    t = loader.get_template('submittedsessions/index.html')
+    c = RequestContext(request, {
+        'PAGE_NAME': 'Submitted Sessions',
+        'session_list': sessions,
+        'request': request})
+    return HttpResponse(t.render(c))
+
+
 def session_submit(request):
     if request.method == 'POST':
         session = SessionForm(request.POST)
         if session.is_valid():
             try:
                 session.save()
-                messages.add_message(request, messages.SUCCESS, 'Thanks! Session saved successfully.')
-                return HttpResponseRedirect(reverse('codecamp.views.session_submit'))
+                messages.add_message(request, messages.SUCCESS,
+                                     'Thanks! Session saved successfully.')
+                return HttpResponseRedirect(reverse(
+                                            'codecamp.views.session_submit'))
             except IntegrityError:
                 messages.add_message(request, messages.ERROR, 'There was an error saving your information please email help@southdakotacodecamp.net or contact us on twitter @sdcodecamp')
                 return HttpResponseRedirect(reverse('codecamp.views.session_submit'))

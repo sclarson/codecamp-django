@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Potential Sessions{% endblock %}
+{% block body %}
+<div id="SubmittedSessionIndex">
+    {% for session in session_list %}
+    <div class="row">
+        <div class="span9">
+            <h3 class="index-title">{{session.title}}</h3>
+            <p>{{session.abstract}}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+
+{% block subbody %}
+<div class="row main-heading">
+    <div class="span12 center">
+        <h3>Do you have something interesting to talk about?</h3>
+        <p class=center><a class="btn btn-cc12 btn-large" href="/submit">Submit a session</a></p>
+    </div>
+</div>
+{% endblock %}
