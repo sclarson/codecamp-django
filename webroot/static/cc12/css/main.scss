@@ -374,6 +374,9 @@ ul.errorlist {
 
 	.main-heading {
 		margin-top: 90px;
+		h3 > a {
+			color: $red;
+		}
 	}
 	.speaker-image {
 		img {
