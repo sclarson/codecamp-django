@@ -36,19 +36,28 @@ def sessions_index(request):
         'PAGE_NAME': 'Sessions',
         'session_list': session_list,
         'request': request})
-    response = HttpResponse(t.render(c))
-    return response
+    return HttpResponse(t.render(c))
+
+def session_archive(request, year):
+    print "enter session_archive"
+    session_list = Session.objects.filter(year=year)
+    t = loader.get_template('sessions/index.html')
+    c = RequestContext(request,{
+        'PAGE_NAME': 'Sessions',
+        'session_list': session_list,
+        'request': request})
+    return HttpResponse(t.render(c))
 
 
-def session_detail(request, slug, id):
+
+def session_detail(request, slug, id, year=0):
     session = get_object_or_404(Session, pk=id)
     t = loader.get_template('sessions/detail.html')
     c = RequestContext(request, {
         'PAGE_NAME': session.title,
         'session': session,
         'request': request})
-    response = HttpResponse(t.render(c))
-    return response
+    return HttpResponse(t.render(c))
 
 
 def submittedsession_index(request):
