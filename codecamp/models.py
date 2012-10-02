@@ -61,8 +61,7 @@ class Session(models.Model):
     )
     speakers = models.ManyToManyField(Speaker)
     title = models.CharField(max_length=60)
-    abstract = models.TextField(blank=True,
-                                help_text="A short summary of the session.")
+    abstract = models.TextField(blank=True,)
     year = models.IntegerField(choices=YEARS, default=date.today().year)
     time = models.CharField(max_length=2, choices=SESSION_TIME_CHOICES, default='8')
     room = models.IntegerField(choices=ROOMS, default=4)
@@ -75,8 +74,13 @@ class Session(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return ('session_detail', (), {'slug': self.slug,
-                                       'id': self.id})
+        if self.year is not None:
+            return ('session_slug', (), {'slug': self.slug,
+                                         'year': self.year,
+                                         'id': self.id})
+        return ('session_detail',(),{'slug': self.slug,
+                                     'id': self.id})
+
     get_absolute_url = models.permalink(get_absolute_url)
 
     def save(self, *args, **kwargs):
