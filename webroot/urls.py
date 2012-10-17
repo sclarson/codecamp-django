@@ -4,7 +4,7 @@ from django.views.generic.simple import redirect_to
 from codecamp.feeds import SessionsFeedAtom, SessionsFeedRSS2
 from codecamp.sitemaps import SpeakerSiteMap, SessionSiteMap
 from tastypie.api import Api
-from codecamp.api.resources import SessionResource
+from codecamp.api.resources import SessionResource, SpeakerResource
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -14,6 +14,7 @@ admin.autodiscover()
 
 v1_api = Api(api_name='v1')
 v1_api.register(SessionResource())
+v1_api.register(SpeakerResource())
 
 sitemaps = {
     'flatpages': FlatPageSitemap,
