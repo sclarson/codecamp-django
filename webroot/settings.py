@@ -14,7 +14,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',  # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': BASE_DIR+'/codecamp.db', # Or path to database file if using sqlite3.
+        'NAME': BASE_DIR + '/codecamp.db',  # Or path to database file if using sqlite3.
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -185,6 +185,6 @@ HAYSTACK_SOLR_URL = 'http://127.0.0.1:8983/solr'
 SITE_NAME = 'South Dakota Code Camp'
 
 try:
-   from local_settings import *
+    from local_settings import *
 except ImportError, e:
-   pass
+    pass
