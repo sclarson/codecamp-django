@@ -7,7 +7,7 @@
     <div class="row">
         <div class="span9">
             <h3 class="index-title"><a href="{{ session.get_absolute_url }}">{{session}}</a></h3>
-            <p>{{session.abstract}}
+            <p>{{session.abstract|safe}}
         </div>
         <div class="span3 about-session">
             <ul>

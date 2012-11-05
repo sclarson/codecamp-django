@@ -9,7 +9,7 @@
         </div>
         <div class="span4">
         	<h4>About</h4>
-            <p>{{ speaker.bio }}</p>
+            <p>{{ speaker.bio|safe }}</p>
         </div>
         <div class="span4 about">
             <h4>Other things</h4>
@@ -27,7 +27,7 @@
     <div class="row session-row">
         <div class="span12">
             <h3 class="index-title"><a href="{{ session.get_absolute_url }}">{{session.title}}</a></h3>
-            <p>{{session.abstract}}
+            <p>{{session.abstract|safe}}
         </div>
     </div>
 	{% endfor %}

@@ -7,7 +7,7 @@
         <div class="span12">
             <h4>Session Abstract</h4>
             <p>{% if session.time %}{{ session.get_time_display }}{% endif %} - {% if session.room %}{{ session.get_room_display }}{% endif %}
-            <p>{{session.abstract}}
+            <p>{{session.abstract|safe}}
         </div>
     </div>
     <!--<div class=row>
@@ -19,7 +19,7 @@
     <div class="row speaker-row">
         <div class="span12">
             <h3 class="index-title"><a href="{{ speaker.get_absolute_url }}">{{speaker}}</a></h3>
-            <p>{{ speaker.bio }}</p>
+            <p>{{ speaker.bio|safe }}</p>
         </div>
     </div>
     {% endfor %}

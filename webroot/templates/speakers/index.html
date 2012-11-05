@@ -11,7 +11,7 @@
         </div>
         <div class="span4">
             <h3 class="index-title"><a href="{{ speaker.get_absolute_url }}">{{speaker}}</a></h3>
-            <p>{{ speaker.bio }}</p>
+            <p>{{ speaker.bio|safe }}</p>
         </div>
         <div class="span4 about-speaker">
             <ul>
