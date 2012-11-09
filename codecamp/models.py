@@ -10,8 +10,7 @@ class Speaker(models.Model):
     """Speaker model docstring"""
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
-    bio = models.TextField(blank=False,
-                           help_text="A short bio of the speaker.")
+    bio = models.TextField(blank=False)
     company = models.CharField(max_length=100)
     twitter = models.CharField(blank=True, max_length=40)
     email = models.EmailField(blank=False, max_length=254)
@@ -43,13 +42,13 @@ class Session(models.Model):
     """Session model docstring"""
     YEARS = ((2012, 2012), )
     SESSION_TIME_CHOICES = (
-        ('0', '8:15 - 8:45'),
-        ('1', '8:45 - 9:00'),
-        ('2', '9:00 - 10:15'),
-        ('3', '10:30 - 11:45'),
-        ('4', '12:45 - 2:00'),
-        ('5', '2:15 - 3:30'),
-        ('6', '3:45 - 5:00'),
+        ('0', '9:00 - 9:10'),
+        ('1', '9:15 - 10:15'),
+        ('2', '10:45 - 11:45'),
+        ('3', '11:45 - 1:00'),
+        ('4', '1:00 - 2:00'),
+        ('5', '2:30 - 3:30'),
+        ('6', '4:00 - 5:00'),
         ('7', '5:00 - 5:30'),
         ('8', 'TBD'),
     )
@@ -57,8 +56,10 @@ class Session(models.Model):
         (1, 'Room 1'),
         (2, 'Room 2'),
         (3, 'Room 3'),
-        (4, 'TBD'),
+        (4, 'Room 4'),
+        (5, 'TBD'),
     )
+    
     speakers = models.ManyToManyField(Speaker)
     title = models.CharField(max_length=60)
     abstract = models.TextField(blank=True,)
